@@ -133,11 +133,11 @@ All colors MUST be HSL.
 @layer components {
   /* Reusable component classes */
   .btn-primary {
-    @apply bg-primary hover:bg-primary-dark text-primary-foreground px-6 py-3 rounded-lg font-medium transition-smooth shadow-md hover:shadow-lg;
+    @apply bg-primary hover:bg-primary-dark text-primary-foreground px-6 py-3 rounded-lg font-medium transition-all duration-300 ease-smooth shadow-md hover:shadow-lg;
   }
   
   .btn-outline {
-    @apply border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground px-6 py-3 rounded-lg font-medium transition-smooth;
+    @apply border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground px-6 py-3 rounded-lg font-medium transition-all duration-300 ease-smooth;
   }
   
   .section-padding {

@@ -26,7 +26,7 @@ const Header = () => {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2 group">
-            <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center group-hover:glow-effect transition-smooth">
+            <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center group-hover:glow-effect transition-all duration-300 ease-smooth">
               <span className="text-white font-bold text-lg">MA</span>
             </div>
             <span className="text-xl font-bold text-primary hidden sm:block">Marketing Agency</span>
@@ -38,7 +38,7 @@ const Header = () => {
               <Link
                 key={item.name}
                 to={item.href}
-                className={`font-medium transition-smooth hover:text-primary ${
+                className={`font-medium transition-all duration-300 ease-smooth hover:text-primary ${
                   isActive(item.href) ? 'text-primary' : 'text-foreground'
                 }`}
               >
@@ -60,7 +60,7 @@ const Header = () => {
 
           {/* Mobile menu button */}
           <button
-            className="lg:hidden p-2 text-foreground hover:text-primary transition-smooth"
+            className="lg:hidden p-2 text-foreground hover:text-primary transition-all duration-300 ease-smooth"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -76,7 +76,7 @@ const Header = () => {
                 <Link
                   key={item.name}
                   to={item.href}
-                  className={`font-medium py-2 transition-smooth hover:text-primary ${
+                  className={`font-medium py-2 transition-all duration-300 ease-smooth hover:text-primary ${
                     isActive(item.href) ? 'text-primary' : 'text-foreground'
                   }`}
                   onClick={() => setIsMenuOpen(false)}

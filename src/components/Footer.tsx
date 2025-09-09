@@ -73,7 +73,7 @@ const Footer = () => {
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className="text-muted-foreground hover:text-primary transition-smooth"
+                     className="text-muted-foreground hover:text-primary transition-all duration-300 ease-smooth"
                   >
                     {link.name}
                   </a>
@@ -90,7 +90,7 @@ const Footer = () => {
                 <li key={link.name}>
                   <Link
                     to={link.href}
-                    className="text-muted-foreground hover:text-primary transition-smooth"
+                     className="text-muted-foreground hover:text-primary transition-all duration-300 ease-smooth"
                   >
                     {link.name}
                   </Link>
@@ -107,7 +107,7 @@ const Footer = () => {
                 <li key={link.name}>
                   <Link
                     to={link.href}
-                    className="text-muted-foreground hover:text-primary transition-smooth"
+                     className="text-muted-foreground hover:text-primary transition-all duration-300 ease-smooth"
                   >
                     {link.name}
                   </Link>
@@ -133,7 +133,7 @@ const Footer = () => {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 bg-muted rounded-lg flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-primary-foreground transition-smooth"
+                  className="w-10 h-10 bg-muted rounded-lg flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-primary-foreground transition-all duration-300 ease-smooth"
                   aria-label={social.name}
                 >
                   <IconComponent className="w-5 h-5" />
@@ -144,10 +144,10 @@ const Footer = () => {
 
           {/* Legal Links */}
           <div className="flex items-center space-x-6 text-sm">
-            <Link to="/privacy" className="text-muted-foreground hover:text-primary transition-smooth">
+            <Link to="/privacy" className="text-muted-foreground hover:text-primary transition-all duration-300 ease-smooth">
               Privacy Policy
             </Link>
-            <Link to="/terms" className="text-muted-foreground hover:text-primary transition-smooth">
+            <Link to="/terms" className="text-muted-foreground hover:text-primary transition-all duration-300 ease-smooth">
               Terms of Service
             </Link>
           </div>
