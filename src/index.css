@@ -11,63 +11,76 @@ All colors MUST be HSL.
     /* Professional Marketing Agency Theme */
     --background: 0 0% 100%;
     --foreground: 0 0% 3.9%;
-    
+
     /* Dark theme for professional look */
     --background-dark: 0 0% 3.9%;
     --foreground-dark: 0 0% 98%;
-    
+
     /* Brand colors - inspired by reference */
-    --primary: 142 76% 36%;  /* Professional green */
+    --primary: #a100ff; /* Professional green */
+    --primary-gradient: #a100ff;
     --primary-foreground: 0 0% 98%;
     --primary-dark: 142 84% 28%;
-    
+
     /* Secondary brand colors */
     --secondary: 0 0% 96.1%;
     --secondary-foreground: 0 0% 9%;
     --secondary-dark: 0 0% 14.9%;
-    
+
     /* Accent colors */
     --accent: 142 76% 36%;
     --accent-foreground: 0 0% 98%;
     --accent-glow: 142 76% 50%;
-    
+
     /* Neutral colors */
     --muted: 0 0% 96.1%;
     --muted-foreground: 0 0% 45.1%;
     --muted-dark: 0 0% 14.9%;
     --muted-foreground-dark: 0 0% 63.9%;
-    
+
     /* UI colors */
     --card: 0 0% 100%;
     --card-foreground: 0 0% 3.9%;
     --card-dark: 0 0% 8.5%;
-    
+
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 3.9%;
-    
+
     --border: 0 0% 89.8%;
     --border-dark: 0 0% 14.9%;
     --input: 0 0% 89.8%;
     --ring: 142 76% 36%;
-    
+
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    
+
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(142 76% 36%), hsl(142 84% 28%));
-    --gradient-hero: linear-gradient(135deg, hsl(0 0% 3.9%) 0%, hsl(142 76% 8%) 100%);
-    --gradient-section: linear-gradient(180deg, hsl(0 0% 3.9%) 0%, hsl(0 0% 8.5%) 100%);
-    
+    --gradient-primary: linear-gradient(
+      135deg,
+      hsl(142 76% 36%),
+      hsl(142 84% 28%)
+    );
+    --gradient-hero: linear-gradient(
+      135deg,
+      hsl(0 0% 3.9%) 0%,
+      hsl(142 76% 8%) 100%
+    );
+    --gradient-section: linear-gradient(
+      180deg,
+      hsl(0 0% 3.9%) 0%,
+      hsl(0 0% 8.5%) 100%
+    );
+
     /* Shadows */
     --shadow-sm: 0 1px 2px 0 hsl(0 0% 0% / 0.05);
     --shadow-md: 0 4px 6px -1px hsl(0 0% 0% / 0.1);
     --shadow-lg: 0 10px 15px -3px hsl(0 0% 0% / 0.1);
     --shadow-glow: 0 0 40px hsl(142 76% 36% / 0.3);
-    
+
     /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-fast: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
-    
+
     --radius: 0.5rem;
   }
 
@@ -122,11 +135,15 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground;
   }
-  
+
   /* Professional dark theme by default */
   body {
     background: hsl(var(--background-dark));
     color: hsl(var(--foreground-dark));
+    font-family: "DM Sans", sans-serif;
+    font-optical-sizing: auto;
+    -webkit-font-smoothing: antialiased; /* smoother text on macOS/iOS */
+    -moz-osx-font-smoothing: grayscale; /* smoother text on Firefox/macOS */
   }
 }
 
@@ -135,39 +152,255 @@ All colors MUST be HSL.
   .btn-primary {
     @apply bg-primary hover:bg-primary-dark text-primary-foreground px-6 py-3 rounded-lg font-medium transition-all duration-300 ease-smooth shadow-md hover:shadow-lg;
   }
-  
+
   .btn-outline {
     @apply border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground px-6 py-3 rounded-lg font-medium transition-all duration-300 ease-smooth;
   }
-  
+
   .section-padding {
     @apply py-16 lg:py-24;
   }
-  
+
   .container-custom {
     @apply container mx-auto px-4 sm:px-6 lg:px-8;
   }
-  
+
   /* Hero section with background image */
   .hero-gradient {
-    background: 
-      linear-gradient(135deg, hsl(0 0% 3.9% / 0.8) 0%, hsl(142 76% 8% / 0.9) 100%),
-      url('/src/assets/hero-bg.jpg') center/cover no-repeat;
+    background: linear-gradient(
+        135deg,
+        hsl(0 0% 3.9% / 0.8) 0%,
+        hsl(142 76% 8% / 0.9) 100%
+      ),
+      url("/src/assets/hero-bg.jpg") center/cover no-repeat;
     background-attachment: fixed;
   }
-  
+
   .section-gradient {
     background: var(--gradient-section);
   }
-  
+
   .text-gradient {
     background: var(--gradient-primary);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
-  
+
   .glow-effect {
     box-shadow: var(--shadow-glow);
   }
+}
+
+.heading-hero {
+  letter-spacing: 1.5px !important;
+  font-weight: 500 !important;
+  line-height: 1.14 !important;
+}
+.hero-button {
+  color: #fff;
+  background-color: #0000;
+  border-width: 1px;
+  border-color: #ffffff80;
+  width: 180px;
+  margin-top: 30px;
+  font-weight: 500;
+}
+
+.hero-button:hover {
+  background: var(--primary-gradient);
+  border-color: #a100ff;
+}
+
+.content-about span {
+  background: #2a2a2a;
+  padding: 8px 17px;
+  display: block;
+  width: fit-content;
+  border-radius: 40px;
+  margin-bottom: 20px;
+}
+.content-about h2 {
+  font-size: 56px;
+  font-weight: 500;
+  line-height: 1.2;
+  margin-bottom: 21px;
+}
+.content-about p {
+  font-size: 18px;
+  font-weight: 500;
+  opacity: 0.7;
+  line-height: 30px;
+  margin-bottom: 19px;
+}
+.content-about button {
+  background: #a100ff;
+  padding: 10px 15px;
+  font-weight: 500;
+  border-radius: 10px;
+}
+.header-button {
+  background: #a100ff;
+  padding: 8px 19px;
+  font-weight: 500;
+  border-radius: 8px;
+  font-size: 14px;
+}
+.content-about {
+  margin-bottom: 50px;
+}
+.card-about {
+  padding: 30px 0px;
+}
+.card-about img {
+  width: 70px;
+  margin-bottom: 10px;
+}
+.card-about h3 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  font-weight: 400;
+  /* letter-spacing: 1px; */
+}
+.card-about p {
+  font-size: 18px;
+  opacity: 0.7;
+}
+
+.bg-image {
+  background-size: cover;
+  min-height: 400px;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+}
+.bg-image:hover {
+  box-shadow: rgb(240 46 170 / 17%) -5px 5px, rgb(240 46 170 / 13%) -10px 10px;
+}
+.type1 {
+  background-image: url("/src/assets/SEO.png");
+}
+.type2 {
+  background-image: url("/src/assets/web3.png");
+}
+.type3 {
+  background-image: url("/src/assets/branding.png");
+}
+.type4 {
+  background-image: url("/src/assets/goggle.png");
+}
+.type5 {
+  background-image: url("/src/assets/social.png");
+}
+.type6 {
+  background-image: url("/src/assets/content.png");
+}
+.type7 {
+  background-image: url("/src/assets/influcenr.png");
+}
+.type8 {
+  background-image: url("/src/assets/web.png");
+}
+.type9 {
+  background-image: url("/src/assets/course.png");
+}
+.content-service {
+  cursor: pointer;
+  height: 100%;
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 1) 16%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  padding: 20px;
+  padding: 20px;
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+.content-service h3 {
+  font-size: 25px;
+  margin-bottom: 8px;
+  line-height: 31px;
+  font-weight: 500;
+}
+.content-service p {
+  font-size: 15px;
+  margin-bottom: 10px;
+  opacity: 0.7;
+}
+.content-service button {
+  font-size: 14px;
+}
+.content-service:hover button {
+  font-size: 14px;
+  text-decoration: underline;
+}
+.blog-text_ {
+  font-size: 56px;
+  font-weight: 500;
+  line-height: 1.2;
+  margin-bottom: 21px;
+}
+
+.blog-list span {
+  font-size: 16px;
+  font-weight: 400;
+  color: #fff;
+  margin-bottom: 7px;
+  opacity: 0.7;
+}
+.blog-list span {
+  font-size: 16px;
+  font-weight: 400;
+  color: #fff;
+  margin-bottom: 7px;
+  opacity: 0.7;
+}
+.blog-list h3 {
+  font-size: 24px;
+  line-height: 30px;
+  color: #fff;
+  margin-bottom: 10px;
+}
+.blog-list p {
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+  opacity: 0.7;
+}
+.swiper-button-next,
+.swiper-rtl .swiper-button-prev {
+  width: 50px;
+  height: 50px;
+  background: #a100ff;
+  border-radius: 50px;
+  color: #fff;
+  top: -64px;
+}
+
+.swiper-button-prev,
+.swiper-rtl .swiper-button-next {
+  width: 50px;
+  height: 50px;
+  background: #a100ff;
+  border-radius: 50px;
+  color: #fff;
+  left: 90%;
+
+  top: -63px;
+}
+
+.swiper-button-next:after,
+.swiper-rtl .swiper-button-prev:after {
+  font-size: 22px;
+}
+.swiper-button-prev:after,
+.swiper-rtl .swiper-button-next:after {
+  font-size: 22px;
+}
+.swiper {
+  overflow: visible;
 }
