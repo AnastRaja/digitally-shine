@@ -63,45 +63,65 @@ const Contact = () => {
       details: '+1 (555) 123-4567',
       subDetails: 'Mon-Fri 9AM-6PM EST',
     },
-    {
-      icon: MapPin,
-      title: 'Visit Us',
-      details: '123 Business Avenue, Suite 100',
-      subDetails: 'City, State 12345',
-    },
-    {
-      icon: Clock,
-      title: 'Business Hours',
-      details: 'Monday - Friday: 9AM - 6PM',
-      subDetails: 'Weekend consultations available',
-    },
+    // {
+    //   icon: MapPin,
+    //   title: 'Visit Us',
+    //   details: '123 Business Avenue, Suite 100',
+    //   subDetails: 'City, State 12345',
+    // },
+    // {
+    //   icon: Clock,
+    //   title: 'Business Hours',
+    //   details: 'Monday - Friday: 9AM - 6PM',
+    //   subDetails: 'Weekend consultations available',
+    // },
   ];
 
   return (
     <>
-      {/* Hero Section */}
-      <section className="hero-gradient section-padding text-center relative overflow-hidden">
-        <div className="absolute inset-0 bg-black/20"></div>
-        <div className="container-custom relative z-10">
-          <div className="max-w-4xl mx-auto">
-            <h1 className="text-5xl lg:text-6xl font-bold text-white mb-6">
-              Get In <span className="text-gradient">Touch</span>
+     
+
+      {/* Contact Form & Info Section */}
+      <section className="section-padding bg-black pt-32">
+        <div className="container-custom">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+           <div className="space-y-6 lg:col-span-6">
+ <h1 className="text-5xl lg:text-6xl font-bold text-white mb-6">
+              Get In Touch
             </h1>
-            <p className="text-xl lg:text-2xl text-white/90 leading-relaxed">
+            <p className="text-xl lg:text-1xl text-white/90 leading-relaxed">
               Ready to transform your marketing? Let's discuss how we can help your business 
               achieve exceptional growth and success.
             </p>
-          </div>
-        </div>
-      </section>
+            <div className='grid grid-cols-1 lg:grid-cols-12 gap-7'>
+{contactInfo.map((info, index) => {
+                const IconComponent = info.icon;
+                return (
+                  <Card key={index} className=" border-none lg:col-span-12 bg-transparent p-0">
+                    <CardContent className="p-6 px-0">
+                      <div className="flex items-start space-x-4">
+                        <div className="w-12 h-12 bg-[#a100ff] rounded-lg flex items-center justify-center flex-shrink-0">
+                          <IconComponent className="w-6 h-6 text-white" />
+                        </div>
+                        <div>
+                          <h3 className="font-semibold text-foreground mb-1">{info.title}</h3>
+                          <p className="text-muted-foreground font-medium">{info.details}</p>
+                          <p className="text-muted-foreground text-sm">{info.subDetails}</p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                );
+              })}
+            </div>
+              
 
-      {/* Contact Form & Info Section */}
-      <section className="section-padding section-gradient">
-        <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-            {/* Contact Form */}
-            <div className="lg:col-span-2">
-              <Card className="bg-card border-primary/20">
+              {/* Quick Call to Action */}
+             
+            </div>
+            
+            <div className="lg:col-span-6">
+              <Card className="bg-card border-none p-4">
                 <CardHeader>
                   <CardTitle className="text-3xl font-bold text-foreground">
                     Send Us a Message
@@ -125,7 +145,7 @@ const Contact = () => {
                           required
                           value={formData.name}
                           onChange={handleInputChange}
-                          className="bg-background border-primary/20 focus:border-primary"
+                          className="bg-background  focus:border-primary border-none"
                           placeholder="Your full name"
                         />
                       </div>
@@ -140,7 +160,7 @@ const Contact = () => {
                           required
                           value={formData.email}
                           onChange={handleInputChange}
-                          className="bg-background border-primary/20 focus:border-primary"
+                          className="bg-background border-none focus:border-primary"
                           placeholder="your.email@company.com"
                         />
                       </div>
@@ -157,7 +177,7 @@ const Contact = () => {
                           type="text"
                           value={formData.company}
                           onChange={handleInputChange}
-                          className="bg-background border-primary/20 focus:border-primary"
+                          className="bg-background border-none focus:border-primary"
                           placeholder="Your company name"
                         />
                       </div>
@@ -171,7 +191,7 @@ const Contact = () => {
                           type="tel"
                           value={formData.phone}
                           onChange={handleInputChange}
-                          className="bg-background border-primary/20 focus:border-primary"
+                          className="bg-background border-none focus:border-primary"
                           placeholder="+1 (555) 123-4567"
                         />
                       </div>
@@ -186,7 +206,7 @@ const Contact = () => {
                         name="service"
                         value={formData.service}
                         onChange={handleInputChange}
-                        className="w-full px-3 py-2 bg-background border border-primary/20 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary text-foreground"
+                        className="w-full px-3 py-2 bg-background border border-none rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary text-foreground"
                       >
                         <option value="">Select a service</option>
                         <option value="digital-marketing">Digital Marketing Strategy</option>
@@ -209,68 +229,33 @@ const Contact = () => {
                         rows={6}
                         value={formData.message}
                         onChange={handleInputChange}
-                        className="bg-background border-primary/20 focus:border-primary"
+                        className="bg-background border-none focus:border-primary"
                         placeholder="Tell us about your project goals, challenges, and how we can help..."
                       />
                     </div>
 
-                    <Button
+                    <div className=' flex justify-end'>
+<Button
                       type="submit"
                       size="lg"
-                      className="btn-primary w-full md:w-auto"
+                      className="btn-primary w-full md:w-auto bg-[#a100ff] hover:bg-[#a100ff]"
                     >
                       <Send className="w-5 h-5 mr-2" />
                       Send Message
                     </Button>
+                    </div>
                   </form>
                 </CardContent>
               </Card>
             </div>
 
-            {/* Contact Information */}
-            <div className="space-y-6">
-              {contactInfo.map((info, index) => {
-                const IconComponent = info.icon;
-                return (
-                  <Card key={index} className="bg-card border-primary/20">
-                    <CardContent className="p-6">
-                      <div className="flex items-start space-x-4">
-                        <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center flex-shrink-0">
-                          <IconComponent className="w-6 h-6 text-white" />
-                        </div>
-                        <div>
-                          <h3 className="font-semibold text-foreground mb-1">{info.title}</h3>
-                          <p className="text-muted-foreground font-medium">{info.details}</p>
-                          <p className="text-muted-foreground text-sm">{info.subDetails}</p>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                );
-              })}
-
-              {/* Quick Call to Action */}
-              <Card className="bg-gradient-primary border-0">
-                <CardContent className="p-6 text-center text-white">
-                  <h3 className="text-xl font-bold mb-3">Need Immediate Assistance?</h3>
-                  <p className="mb-4 opacity-90">
-                    Schedule a free 30-minute consultation to discuss your marketing goals.
-                  </p>
-                  <Button
-                    variant="outline"
-                    className="border-white text-white hover:bg-white hover:text-primary"
-                  >
-                    Schedule Call
-                  </Button>
-                </CardContent>
-              </Card>
-            </div>
+          
           </div>
         </div>
       </section>
 
       {/* Map Section */}
-      <section className="h-96 relative">
+      {/* <section className="h-96 relative">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387191.33750346623!2d-73.97968099999999!3d40.6974881!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sus!4v1642345678901!5m2!1sen!2sus"
           width="100%"
@@ -282,7 +267,7 @@ const Contact = () => {
           title="Marketing Agency Location"
         ></iframe>
         <div className="absolute inset-0 bg-black/20 pointer-events-none"></div>
-      </section>
+      </section> */}
     </>
   );
 };

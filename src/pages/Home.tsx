@@ -17,7 +17,7 @@ import piechart from "../assets/customer-service.svg";
 import about from "../assets/about-us.png";
 import why from "../assets/why.png";
 import CountUp from "react-countup";
-import Blogsection from "../components/Blogsection";
+import Blogsection from "../components/BlogsectionHome";
 import TestimonialSection from "@/components/TestimonialSection";
 
 const Home = () => {
