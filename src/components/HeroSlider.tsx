@@ -41,8 +41,10 @@ export default function HeroSlider() {
               Web3 Marketing <br />
               Services
             </h1>
-            <button className="mt-4 px-6 py-3 flex justify-between rounded-lg  transition hero-button">
-              Contact Us <ArrowRight />{" "}
+            <p className="text-2xl">From <strong>NFTs to Metaverse and Blockchain growth</strong>, <br/> we build decentralized strategies that connect communities and create influence.
+</p>
+            <button className="mt-4 px-6 py-3 flex justify-between rounded-lg  transition hero-button w-fit">
+              Book a Free Discovery Call <ArrowRight />{" "}
             </button>
           </div>
         </div>
@@ -65,8 +67,10 @@ export default function HeroSlider() {
               Digital Marketing <br />
               Services
             </h1>
+              <p className="text-2xl">We don't just follow trends; we create them. <br/>Get a<strong> digital marketing strategy</strong> that connects, converts, and dominates your market.
+</p>
             <button className="mt-4 px-6 py-3 flex justify-between rounded-lg  transition hero-button">
-              Contact Us <ArrowRight />{" "}
+              Launch Your Digital Legacy <ArrowRight />{" "}
             </button>
           </div>
         </div>
@@ -85,8 +89,11 @@ export default function HeroSlider() {
               Ai Marketing <br />
               Services
             </h1>
+             <p className="text-2xl">AI, On Your Side. Stop guessing, start knowing.Leverage AI marketing <br/>to hyper-personalize campaigns,  predict customer behavior, and maximize your ROI.
+</p>
             <button className="mt-4 px-6 py-3 flex justify-between rounded-lg  transition hero-button">
-              Contact Us <ArrowRight />{" "}
+             Book Free Consultation
+ <ArrowRight />{" "}
             </button>
           </div>
         </div>
@@ -118,13 +125,13 @@ export default function HeroSlider() {
           </div>
 
           {/* Mute/unmute */}
-          <button
+          {/* <button
             onClick={() => setMuted((m) => !m)}
             className="ml-3 text-white p-1 rounded hover:text-gray-300"
             aria-label={muted ? "Unmute" : "Mute"}
           >
             {muted ? <VolumeX size={18} /> : <Volume2 size={18} />}
-          </button>
+          </button> */}
         </div>
       </div>
     </div>

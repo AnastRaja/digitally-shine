@@ -8,34 +8,34 @@ const testimonials = [
   {
     logo: "https://avatar.iran.liara.run/public/boy",
     text:
-      "Jobin & Jismi's outstanding project management skills are a unique aspect of their service. What stood out most about Jobin and Jismi was their exceptional commitment to excellence and customer satisfaction. Their level of expertise...",
+      "Adroits Digital didn’t just help us market our NFT project—they helped us build a global community. The results were beyond expectations",
     authorImg: "https://avatar.iran.liara.run/public/boy",
-    author: "Anil Malhi",
-    role: "Director of Web Development & IT,",
+    author: "Maya Chen",
+    role: "Co-Founder, PixelPandas NFT",
   },
   {
     logo: "https://avatar.iran.liara.run/public/boy",
     text:
-      "We have been working with Jobin & Jismi since 2023. What began as a project for customizing our NetSuite Advanced PDF forms has evolved into a full-service development partnership. J&J has extended the functionality of many of...",
+      "Their AI-driven campaigns increased our conversions by 200%. It felt like they knew our customers better than we did.",
     authorImg: "https://avatar.iran.liara.run/public/boy",
-    author: "Alex Thompson",
-    role: "Global Information Technology Director, ",
+    author: "Ankit Malhotra",
+    role: "Head of Growth, UrbanLoom Fashion",
   },
   {
     logo: "https://avatar.iran.liara.run/public/boy",
     text:
-      "Their openness, prompt communication, and skilled execution ensured our project was completed smoothly, on time, and within budget. The transition of our site was flawless, with no loss of customer connectivity. Manuals were...",
+      "From web design to strategy, they delivered quality and innovation at every step",
     authorImg: "https://avatar.iran.liara.run/public/boy",
-    author: "Steve Pardue",
-    role: "Managing Member",
+    author: "Priya Deshmukh ",
+    role: "Startup CEO",
   },
   {
     logo: "https://avatar.iran.liara.run/public/boy",
     text:
-      "Their openness, prompt communication, and skilled execution ensured our project was completed smoothly, on time, and within budget. The transition of our site was flawless, with no loss of customer connectivity. Manuals were...",
+      "We’re a SaaS bootstrapped to $1 M ARR and needed predictable pipeline. Their LinkedIn ABM cadences booked 43 qualified demos per month—up from 9—and cut sales cycle by 22 days.",
     authorImg: "https://avatar.iran.liara.run/public/boy",
-    author: "Steve Pardue",
-    role: "Managing Member",
+    author: "Rahul Nair",
+    role: "Founder & CTO",
   },
   // ➝ Add more testimonials here
 ];
@@ -50,7 +50,7 @@ export default function TestimonialSection() {
           <span>Testimonials</span>
           <h2>
             {" "}
-            Hear from those <br /> who’ve experienced{" "}
+            Trusted by Innovators & <br/>Game-Changers
           </h2>
         </div>
 

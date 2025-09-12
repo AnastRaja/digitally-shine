@@ -202,7 +202,7 @@ All colors MUST be HSL.
   background-color: #0000;
   border-width: 1px;
   border-color: #ffffff80;
-  width: 180px;
+  width: fit-content;
   margin-top: 30px;
   font-weight: 500;
 }
@@ -228,9 +228,9 @@ All colors MUST be HSL.
 }
 .content-about p {
   font-size: 18px;
-  font-weight: 500;
+  font-weight: 400;
   opacity: 0.7;
-  line-height: 30px;
+  line-height: 26px;
   margin-bottom: 19px;
 }
 .content-about button {
@@ -304,6 +304,16 @@ All colors MUST be HSL.
 }
 .type9 {
   background-image: url("/src/assets/course.png");
+}
+.typeai {
+  background-image: url("/src/assets/AImarketingservice.png");
+}
+.typemobile {
+  background-image: url("/src/assets/mobileapp.png");
+
+}
+.typecrowd{
+  background-image: url("/src/assets/crowd.png");
 }
 .content-service {
   cursor: pointer;
@@ -420,4 +430,13 @@ All colors MUST be HSL.
 .content-area h2 {
     font-size: 30px;
     line-height: 36px;
+}
+.CTA_section{
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height: 520px;
+  display:flex;
+  align-items: center;
+
+  background-image: url("./assets/CTA_banner.png");
 }
