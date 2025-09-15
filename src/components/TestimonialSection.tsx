@@ -50,7 +50,8 @@ export default function TestimonialSection() {
           <span>Testimonials</span>
           <h2>
             {" "}
-            Trusted by Innovators & <br/>Game-Changers
+            Trusted by Innovators & <br />
+            Game-Changers
           </h2>
         </div>
 
@@ -59,21 +60,18 @@ export default function TestimonialSection() {
           modules={[Navigation]}
           navigation
           spaceBetween={30}
-          slidesPerView={2} // show 2 slides side by side
+          slidesPerView={3} // show 2 slides side by side
           slidesPerGroup={1} // move 1 slide at a time
           breakpoints={{
             768: {slidesPerView: 2},
-            1024: {slidesPerView: 2},
+            1024: {slidesPerView: 3},
           }}
         >
           {testimonials.map((item, index) => (
             <SwiperSlide key={index}>
-              <div className=" rounded-xl  h-full flex flex-col justify-between shadow-sm my-10">
+              <div className=" rounded-xl flex flex-col justify-start shadow-sm my-10 p-4 h-64 max-h-64 bg-[#151517] testimonial-card">
                 {/* Text */}
-                <p className="text-white text-[20px] mb-4">{item.text}</p>
-
-                {/* Author */}
-                <div className="flex items-center mt-auto pt-4">
+                <div className="flex items-center  pt-4">
                   <img
                     src={item.authorImg}
                     alt={item.author}
@@ -81,9 +79,13 @@ export default function TestimonialSection() {
                   />
                   <div>
                     <h4 className="text-white font-semibold">{item.author}</h4>
-                    <p className="text-sm text-gray-500">{item.role}</p>
+                    <p className="text-sm text-gray-500 role">{item.role}</p>
                   </div>
                 </div>
+
+                <p className="text-white text-[18px] mb-4 mt-3">{item.text}</p>
+
+                {/* Author */}
               </div>
             </SwiperSlide>
           ))}

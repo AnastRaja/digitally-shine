@@ -77,8 +77,8 @@
 //       {/* Breadcrumb */}
 //       <section className="py-8 bg-muted">
 //         <div className="container-custom">
-//           <Link 
-//             to="/blog" 
+//           <Link
+//             to="/blog"
 //             className="inline-flex items-center text-primary hover:text-primary-dark transition-smooth font-medium"
 //           >
 //             <ArrowLeft className="w-4 h-4 mr-2" />
@@ -103,15 +103,15 @@
 //                   </span>
 //                 )}
 //               </div>
-              
+
 //               <h1 className="text-4xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
 //                 {blog.title}
 //               </h1>
-              
+
 //               <p className="text-xl text-muted-foreground leading-relaxed mb-8 max-w-2xl mx-auto">
 //                 {blog.description}
 //               </p>
-              
+
 //               <div className="flex items-center justify-center space-x-6 text-muted-foreground mb-8">
 //                 <div className="flex items-center space-x-2">
 //                   <Calendar className="w-5 h-5 text-primary" />
@@ -122,10 +122,10 @@
 //                   <span>{blog.readTime}</span>
 //                 </div>
 //               </div>
-              
-//               <Button 
+
+//               <Button
 //                 onClick={handleShare}
-//                 variant="outline" 
+//                 variant="outline"
 //                 className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
 //               >
 //                 <Share2 className="w-4 h-4 mr-2" />
@@ -142,7 +142,7 @@
 //           <div className="max-w-4xl mx-auto">
 //             <Card className="bg-card border-primary/20">
 //               <CardContent className="p-8 lg:p-12">
-//                 <div 
+//                 <div
 //                   className="prose prose-lg max-w-none text-foreground
 //                     prose-headings:text-foreground prose-headings:font-bold
 //                     prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6 prose-h2:text-gradient
@@ -167,7 +167,7 @@
 //               <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-12 text-center">
 //                 Related <span className="text-gradient">Articles</span>
 //               </h2>
-              
+
 //               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 //                 {relatedBlogs.map((relatedBlog) => (
 //                   <Card key={relatedBlog.id} className="bg-card border-primary/20 group hover:border-primary/40 transition-smooth">
@@ -177,17 +177,17 @@
 //                           {relatedBlog.category}
 //                         </span>
 //                       </div>
-                      
+
 //                       <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-smooth mb-3 line-clamp-2">
 //                         <Link to={`/blog/${relatedBlog.slug}`}>
 //                           {relatedBlog.title}
 //                         </Link>
 //                       </h3>
-                      
+
 //                       <p className="text-muted-foreground leading-relaxed mb-4 line-clamp-2">
 //                         {relatedBlog.description}
 //                       </p>
-                      
+
 //                       <div className="flex items-center justify-between text-sm text-muted-foreground mb-4">
 //                         <div className="flex items-center space-x-1">
 //                           <Calendar className="w-4 h-4" />
@@ -198,7 +198,7 @@
 //                           <span>{relatedBlog.readTime}</span>
 //                         </div>
 //                       </div>
-                      
+
 //                       <Link to={`/blog/${relatedBlog.slug}`}>
 //                         <Button variant="outline" size="sm" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground w-full">
 //                           Read Article
@@ -221,7 +221,7 @@
 //               Ready to Apply These Strategies?
 //             </h2>
 //             <p className="text-xl text-white/90 mb-8 leading-relaxed">
-//               Let our expert team help you implement these proven marketing strategies 
+//               Let our expert team help you implement these proven marketing strategies
 //               and achieve exceptional results for your business.
 //             </p>
 //             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -245,99 +245,177 @@
 
 // export default BlogDetail;
 
-import React from "react";
-import Link from "react-dom"
-
+import React, {useEffect, useState} from "react";
 import {
   Breadcrumb,
-  BreadcrumbEllipsis,
   BreadcrumbItem,
   BreadcrumbLink,
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb"
-import { FaSquareFacebook } from "react-icons/fa6";
-import { FaLinkedin } from "react-icons/fa";
-import { FaLink } from "react-icons/fa";
-// NetSuiteBlogHero.jsx
-// Single-file React component using Tailwind CSS.
-// - Exports a default component
-// - Mobile-responsive and closely matches the screenshot layout
-// - Replace `heroImage` with your real image path or URL
+} from "@/components/ui/breadcrumb";
+import {Link} from "react-router-dom";
 
-const heroImage = "https://picsum.photos/400/200?random=3"; // <-- swap with real image
+import {FaSquareFacebook} from "react-icons/fa6";
+import {FaLinkedin} from "react-icons/fa";
+import {FaLink} from "react-icons/fa";
+import {useParams} from "react-router-dom";
+import axios from "axios";
+import {
+  ArrowRight,
+  CheckCircle,
+  Star,
+  TrendingUp,
+  Users,
+  Zap,
+} from "lucide-react";
 
 export default function NetSuiteBlogHero() {
+  const {slug} = useParams();
+  const [blog, setBlog] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    if (!slug) return;
+    setLoading(true);
+
+    axios
+      .get(`https://blogapiadroits.onrender.com/api/blogs/${slug}`)
+      .then((res) => {
+        setBlog(res.data);
+      })
+      .catch((err) => {
+        console.error("Error fetching blog:", err);
+      })
+      .finally(() => setLoading(false));
+  }, [slug]);
+
+  if (loading) {
+    return <p className="text-center py-20">Loading blog...</p>;
+  }
+
+  if (!blog) {
+    return <p className="text-center py-20">Blog not found</p>;
+  }
+
   return (
-    <article className="container mx-auto px-4 sm:px-6 lg:px-8 section-padding py-30">
-      <Breadcrumb>
-      <BreadcrumbList>
-        <BreadcrumbItem>
-          <BreadcrumbLink asChild>
-            <a href="/">Home</a>
-          </BreadcrumbLink>
-        </BreadcrumbItem>
-        <BreadcrumbSeparator />
-        
-        <BreadcrumbItem>
-          <BreadcrumbLink asChild>
-            <a href="/docs/components">Blogs</a>
-          </BreadcrumbLink>
-        </BreadcrumbItem>
-        <BreadcrumbSeparator />
-        <BreadcrumbItem>
-          <BreadcrumbPage>New In NetSuite Smarter Planning And Decision Making</BreadcrumbPage>
-        </BreadcrumbItem>
-      </BreadcrumbList>
-    </Breadcrumb>
+    <div>
+      <article className="container mx-auto px-4 sm:px-6 lg:px-8 section-padding py-30 bg-black">
+        {/* Breadcrumb */}
+        <Breadcrumb>
+          <BreadcrumbList>
+            <BreadcrumbItem>
+              <BreadcrumbLink asChild>
+                <a href="/">Home</a>
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbLink asChild>
+                <a href="/blog">Blogs</a>
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbPage>{blog.title}</BreadcrumbPage>
+            </BreadcrumbItem>
+          </BreadcrumbList>
+        </Breadcrumb>
 
-      <div className="xxl:max-w-[860px] max-w-[700px] mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start pt-10">
-        {/* Main column */}
-        <div className="lg:col-span-12">
-          <div className="inline-block mb-4">
-            <span className="bg-emerald-100 text-emerald-800 text-xs font-medium px-3 py-1 rounded-full blog_lable">Blogs</span>
-          </div>
+        <div className="xxl:max-w-[960px] max-w-[890px] mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start pt-10">
+            {/* Main column */}
+            <div className="lg:col-span-12">
+              <div className="inline-block mb-4">
+                <span className="bg-emerald-100 text-emerald-800 text-xs font-medium px-3 py-1 rounded-full">
+                  {blog.category || "Blog"}
+                </span>
+              </div>
 
-          <h1 className="mt-3 text-4xl sm:text-5xl  font-semibold text-white">New in NetSuite 2025.2: Smarter Planning and Decision-Making with AI</h1>
+              <h1 className="mt-1 text-4xl sm:text-5xl font-semibold text-white">
+                {blog.title}
+              </h1>
 
-          <div className="mt-6 flex items-center justify-between sm:justify-between sm:space-x-8">
-            <time className="text-sm text-white opacity-70 font-medium">September 02, 2025</time>
+              <div className="mt-3 flex items-center justify-between sm:space-x-8">
+                <time className="text-sm text-white opacity-70 font-medium">
+                  {new Date(blog.createdAt).toLocaleDateString("en-US", {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                  })}
+                </time>
 
-            <div className="ml-auto sm:ml-6 flex items-center space-x-3">
-              <span className="text-sm text-white opacity-70 font-medium">Share</span>
+                <div className="ml-auto sm:ml-6 flex items-center space-x-3">
+                  <span className="text-sm text-white opacity-70 font-medium">
+                    Share
+                  </span>
 
-              {/* Simple Icon Buttons */}
-              <a href="" className="p-2 rounded-md bg-[#2a2a2a]"><FaSquareFacebook/></a>
-              <a href="" className="p-2 rounded-md bg-[#2a2a2a]"><FaLinkedin/></a>
-              <a href="" className="p-2 rounded-md bg-[#2a2a2a]"><FaLink/></a>
-              
-            </div>
-          </div>
+                  {/* Social Share */}
+                  <a href="#" className="p-2 rounded-md bg-[#2a2a2a]">
+                    <FaSquareFacebook />
+                  </a>
+                  <a href="#" className="p-2 rounded-md bg-[#2a2a2a]">
+                    <FaLinkedin />
+                  </a>
+                  <a href="#" className="p-2 rounded-md bg-[#2a2a2a]">
+                    <FaLink />
+                  </a>
+                </div>
+              </div>
 
-          <div className="mt-8">
-            <div className="rounded-lg overflow-hidden shadow-lg">
-              <img src={heroImage} alt="New in NetSuite 2025.2 - AI" className="w-full h-auto object-cover block" />
-            </div>
-          </div>
+              {/* Featured Image */}
+              {blog.imageUrl && (
+                <div className="mt-8">
+                  <div className="rounded-lg overflow-hidden shadow-lg">
+                    <img
+                      src={blog.imageUrl}
+                      alt={blog.title}
+                      className="w-full h-auto object-cover block"
+                    />
+                  </div>
+                </div>
+              )}
 
-          {/* Placeholder for article body */}
-          <div className="mt-8 prose prose-slate max-w-none">
-            <div className="content-area">
-<p><span >Modern-day executives have to contend with rapid changes in the market, shrinking profit margins, and increasing demands from both investors and corporate boards.&nbsp; In a recent&nbsp;</span><a href="https://www.pwc.com/us/en/tech-effect/ai-analytics/ai-agent-survey.html" target="_blank"><span ><u>PwC survey</u></span></a><span >, 88% of C-level executives acknowledged the importance of AI adoption in order to remain competitive. This is exactly what NetSuite 2025.2 aims to address. It helps leadership close the books faster, enhances forecast accuracy so that leadership can make effective decisions through embedded AI in planning, forecasting, and reporting.</span></p>
-            <h2><span ><strong>The Strategic Importance: Why AI-Powered Planning Matters for C-Suite Leaders?</strong></span></h2>
-            <p><span ><strong>Market Context and Challenges</strong></span></p>
-           <p><span >One of the biggest pain points of the finance team is the month-end close. A major reason why it takes time is that logs and reconciliations need technical translation, which, in turn, delays board reporting.&nbsp;</span></p>
-            <p><span ><strong>C-Suite Impact:</strong></span></p>
-           
+              {/* Blog Content */}
+              <div className="mt-8 prose prose-slate max-w-none">
+                <div
+                  className="content-area"
+                  dangerouslySetInnerHTML={{__html: blog.body}}
+                />
+              </div>
             </div>
           </div>
         </div>
-
-        
-      </div>
-      </div>
-    </article>
+      </article>
+      <section className="section-padding  text-center CTA_section">
+        <div className="container-custom">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-4xl lg:text-6xl font-bold text-white mb-6">
+              From Ideas to Impact
+            </h2>
+            <p className="text-xl text-white/90 mb-8 leading-relaxed">
+              We transform your vision into digital experiences that scale.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link to="/contact">
+                {/* <Button
+                        size="lg"
+                        variant="default"
+                        className="inline-flex items-center px-5 py-3 border rounded-md font-medium text-gray-700 hero-button transition hover:bg-primary"
+                      >
+                        Turn My Idea Into Reality
+      
+                        <ArrowRight className="ml-2 w-5 h-5" />
+                      </Button> */}
+                <button className="inline-flex items-center px-3 py-3 !mt-0 border rounded-md font-medium text-gray-700 hero-button transition">
+                  Turn My Idea Into Reality
+                  <ArrowRight className="ml-2 w-4 h-4" />
+                </button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
   );
 }

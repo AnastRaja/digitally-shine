@@ -8,6 +8,7 @@ import {
   TrendingUp,
   Users,
   Zap,
+  ChevronRight,
 } from "lucide-react";
 import web3 from "../assets/web3marketing.jpg";
 import digital from "../assets/digital.jpg";
@@ -35,17 +36,22 @@ export default function HeroSlider() {
         }`}
       >
         <img src={web3} alt="Slide 1" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-black/40 flex flex-col justify-end items-start px-6 md:px-20 pb-48 ">
-          <div className="container">
-            <h1 className="text-white text-3xl md:text-7xl font-bold heading-hero">
-              Web3 Marketing <br />
-              Services
-            </h1>
-            <p className="text-2xl">From <strong>NFTs to Metaverse and Blockchain growth</strong>, <br/> we build decentralized strategies that connect communities and create influence.
-</p>
-            <button className="mt-4 px-6 py-3 flex justify-between rounded-lg  transition hero-button w-fit">
-              Book a Free Discovery Call <ArrowRight />{" "}
-            </button>
+        <div className="absolute inset-0 bg-black/40 flex flex-col justify-end items-start px-6 md:px-20 pb-32 left-0">
+          <div className="container ">
+            <div className="flex flex-col gap-6 max-w-3xl sm:w-full">
+              <h1 className="text-white text-3xl md:text-7xl font-bold heading-hero">
+                Web3 Marketing <br />
+                Services
+              </h1>
+              <p className="text-lg max-w-xl sm:w-full ">
+                From <strong>NFTs to Metaverse and Blockchain growth</strong>,{" "}
+                we build decentralized strategies that connect communities and
+                create influence.
+              </p>
+              <button className="mt-4 px-3 py-3 h-[52px] flex justify-between rounded-lg gap-2 items-center transition hero-button">
+                Book a Free Discovery Call <ChevronRight />{" "}
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -61,17 +67,22 @@ export default function HeroSlider() {
           alt="Slide 2"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/40 flex flex-col justify-end items-start px-6 md:px-20 pb-48">
+        <div className="absolute inset-0 bg-black/40 flex flex-col justify-end items-start px-6 md:px-20 pb-32">
           <div className="container">
-            <h1 className="text-white text-3xl md:text-7xl font-bold heading-hero">
-              Digital Marketing <br />
-              Services
-            </h1>
-              <p className="text-2xl">We don't just follow trends; we create them. <br/>Get a<strong> digital marketing strategy</strong> that connects, converts, and dominates your market.
-</p>
-            <button className="mt-4 px-6 py-3 flex justify-between rounded-lg  transition hero-button">
-              Launch Your Digital Legacy <ArrowRight />{" "}
-            </button>
+            <div className="flex flex-col gap-6 max-w-3xl sm:w-full">
+              <h1 className="text-white text-3xl md:text-7xl font-bold heading-hero">
+                Digital Marketing <br />
+                Services
+              </h1>
+              <p className="text-lg max-w-xl sm:w-full">
+                We don't just follow trends; we create them. Get a
+                <strong> digital marketing strategy</strong> that connects,
+                converts, and dominates your market.
+              </p>
+              <button className="mt-4 px-3 py-3 h-[52px] flex justify-between rounded-lg gap-2 items-center transition hero-button">
+                Launch Your Digital Legacy <ChevronRight />{" "}
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -83,18 +94,23 @@ export default function HeroSlider() {
         }`}
       >
         <img src={ai} alt="Slide 3" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-black/40 flex flex-col justify-end items-start px-6 md:px-20 pb-48">
+        <div className="absolute inset-0 bg-black/40 flex flex-col justify-end items-start px-6 md:px-20 pb-32">
           <div className="container">
-            <h1 className="text-white text-3xl md:text-7xl font-bold heading-hero">
-              Ai Marketing <br />
-              Services
-            </h1>
-             <p className="text-2xl">AI, On Your Side. Stop guessing, start knowing.Leverage AI marketing <br/>to hyper-personalize campaigns,  predict customer behavior, and maximize your ROI.
-</p>
-            <button className="mt-4 px-6 py-3 flex justify-between rounded-lg  transition hero-button">
-             Book Free Consultation
- <ArrowRight />{" "}
-            </button>
+            <div className="flex flex-col gap-6 max-w-3xl sm:w-full">
+              <h1 className="text-white text-3xl md:text-7xl font-bold heading-hero">
+                Ai Marketing <br />
+                Services
+              </h1>
+              <p className="text-lg max-w-xl sm:w-full">
+                AI, On Your Side. Stop guessing, start knowing.Leverage AI
+                marketing to hyper-personalize campaigns, predict customer
+                behavior, and maximize your ROI.
+              </p>
+              <button className="mt-4 px-3 py-3 h-[52px] flex justify-between rounded-lg gap-2 items-center transition hero-button">
+                Book Free Consultation
+                <ChevronRight />{" "}
+              </button>
+            </div>
           </div>
         </div>
       </div>

@@ -8,7 +8,8 @@ import {
   Linkedin,
   Instagram,
 } from "lucide-react";
-
+import {FaPinterestP} from "react-icons/fa";
+import {FaWhatsapp} from "react-icons/fa";
 const Footer = () => {
   const footerLinks = {
     services: [
@@ -35,10 +36,37 @@ const Footer = () => {
   };
 
   const socialLinks = [
-    {name: "Facebook", icon: Facebook, href: "https://facebook.com"},
-    {name: "Twitter", icon: Twitter, href: "https://twitter.com"},
-    {name: "LinkedIn", icon: Linkedin, href: "https://linkedin.com"},
-    {name: "Instagram", icon: Instagram, href: "https://instagram.com"},
+    {
+      name: "Facebook",
+      icon: Facebook,
+      href: "https://www.facebook.com/adroitsdigital/",
+    },
+    {
+      name: "Twitter",
+      icon: Twitter,
+      href: "https://twitter.com/AdroitsDigital",
+    },
+    {
+      name: "LinkedIn",
+      icon: Linkedin,
+      href:
+        "https://www.linkedin.com/company/adroits-digital/about/?viewAsMember=true",
+    },
+    {
+      name: "Instagram",
+      icon: Instagram,
+      href: "https://www.instagram.com/adroitsdigital/",
+    },
+    {
+      name: "Pinterst",
+      icon: FaPinterestP,
+      href: "https://www.pinterest.com/adroitsdigital/",
+    },
+    {
+      name: "Whatsapp",
+      icon: FaWhatsapp,
+      href: "https://wa.me/7904941113/?text=Hi AdroitsDigital",
+    },
   ];
 
   return (
@@ -51,9 +79,7 @@ const Footer = () => {
               <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-lg">MA</span>
               </div>
-              <span className="text-xl font-bold text-primary">
-                Marketing Agency
-              </span>
+              <span className="text-xl font-bold ">Marketing Agency</span>
             </Link>
             <p className="text-muted-foreground mb-6 leading-relaxed">
               Driving growth through innovative marketing strategies. We help
@@ -62,15 +88,15 @@ const Footer = () => {
             </p>
             <div className="space-y-3">
               <div className="flex items-center space-x-3 text-muted-foreground">
-                <Mail className="w-5 h-5 text-primary" />
+                <Mail className="w-5 h-5 " />
                 <span>hello@marketingagency.com</span>
               </div>
               <div className="flex items-center space-x-3 text-muted-foreground">
-                <Phone className="w-5 h-5 text-primary" />
+                <Phone className="w-5 h-5 " />
                 <span>+1 (555) 123-4567</span>
               </div>
               <div className="flex items-center space-x-3 text-muted-foreground">
-                <MapPin className="w-5 h-5 text-primary" />
+                <MapPin className="w-5 h-5 " />
                 <span>123 Business Ave, Suite 100, City, State 12345</span>
               </div>
             </div>
@@ -150,7 +176,7 @@ const Footer = () => {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 bg-muted rounded-lg flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-primary-foreground transition-all duration-300 ease-smooth"
+                  className="w-10 h-10 bg-muted rounded-lg flex items-center justify-center text-muted-foreground hover:bg-[#a100ff] hover:text-primary-foreground transition-all duration-300 ease-smooth"
                   aria-label={social.name}
                 >
                   <IconComponent className="w-5 h-5" />
