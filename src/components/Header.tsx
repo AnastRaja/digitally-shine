@@ -2,6 +2,7 @@ import {useState, useEffect} from "react";
 import {Link, useLocation} from "react-router-dom";
 import {Menu, X, ChevronRight} from "lucide-react";
 import {Button} from "./ui/button";
+import Logo from "../assets/logo.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false); // mobile menu
@@ -38,12 +39,7 @@ const Header = () => {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2 group">
-            <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center group-hover:glow-effect transition-all duration-300 ease-smooth">
-              <span className="text-white font-bold text-lg">MA</span>
-            </div>
-            <span className="text-xl font-bold  hidden sm:block">
-              Marketing Agency
-            </span>
+            <img src={Logo} alt="Logo" className="w-36" />
           </Link>
 
           {/* Desktop nav */}
@@ -77,9 +73,7 @@ const Header = () => {
 
           {/* CTA */}
           <div className="hidden lg:flex items-center space-x-4 ">
-            <button className="header-button h-[52px] !px-5">
-              Get Started
-            </button>
+            <button className="header-button !py-3 !px-5">Get Started</button>
           </div>
 
           {/* Mobile menu button */}

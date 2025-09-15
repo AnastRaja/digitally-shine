@@ -8,6 +8,8 @@ import {
   Linkedin,
   Instagram,
 } from "lucide-react";
+import Logo from "../assets/logo.png";
+
 import {FaPinterestP} from "react-icons/fa";
 import {FaWhatsapp} from "react-icons/fa";
 const Footer = () => {
@@ -75,11 +77,8 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Company Info */}
           <div className="lg:col-span-1">
-            <Link to="/" className="flex items-center space-x-2 mb-6">
-              <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">MA</span>
-              </div>
-              <span className="text-xl font-bold ">Marketing Agency</span>
+            <Link to="/" className="flex items-center space-x-2 group">
+              <img src={Logo} alt="Logo" className=" w-40 mb-8" />
             </Link>
             <p className="text-muted-foreground mb-6 leading-relaxed">
               Driving growth through innovative marketing strategies. We help

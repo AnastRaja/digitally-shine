@@ -118,12 +118,12 @@ const Home = () => {
               <h2>Our Services That Power Your Growth</h2>
             </div>
             <div className="content-about h-full flex justify-end items-center">
-              <p>
+              {/* <p>
                 Our expertise in{" "}
                 <strong>Web3, AI, and Digital Marketing</strong> helps brands
                 stay ahead of the curve. Step into the future with services that
                 blend <strong>innovation, intelligence, and creativity.</strong>
-              </p>
+              </p> */}
             </div>
           </div>
 
