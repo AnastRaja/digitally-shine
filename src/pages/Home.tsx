@@ -18,8 +18,8 @@ import piechart from "../assets/innovation.svg";
 import discover from "../assets/descover.svg";
 import growth from "../assets/growth.svg";
 import design from "../assets/design.svg";
-import about from "../assets/about-us.png";
-import why from "../assets/why.png";
+import about from "../assets/about-us.jpg";
+import why from "../assets/why.webp";
 import CountUp from "react-countup";
 import Blogsection from "../components/BlogsectionHome";
 import TestimonialSection from "@/components/TestimonialSection";
@@ -30,7 +30,8 @@ import webdev from "../assets/icon/webdev.png";
 import UIUX from "../assets/icon/UIUX.png";
 import influncer from "../assets/icon/influncer.png";
 import crowd from "../assets/icon/crowd.png";
-
+import ReactPlayer from "react-player";
+import HeroClip from "../assets/bg-video.mp4";
 const Home = () => {
   useSEO({
     title: generatePageTitle("Home"),
@@ -77,7 +78,7 @@ const Home = () => {
       {/* Hero Section */}
       <HeroSlider />
 
-      <section className="py-32 pb-0 bg-black ">
+      <section className="py-32  bg-black ">
         <div className="container">
           <div className="grid grid-cols-2 lg:grid-cols-2 gap-11">
             <div>
@@ -110,7 +111,18 @@ const Home = () => {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="section-padding  bg-black">
+      <section
+        id="services"
+        className="section-padding  bg-black solution_section"
+      >
+        {/* <ReactPlayer
+          src={HeroClip}
+          controls={false}
+          playing={true}
+          muted={true}
+          loop={true}
+          style={{width: "100%", height: "auto", aspectRatio: "16/9"}}
+        /> */}
         <div className="container">
           <div className="grid grid-cols-2 lg:grid-cols-2 gap-12 items-center">
             <div className="content-about">
@@ -155,7 +167,7 @@ const Home = () => {
                 </Card>
               );
             })} */}
-            <div className="card-service bg-image type2">
+            <div className="card-service bg-image  type2">
               <div className="content-service">
                 <img src={web3} alt="" />
                 <div>
@@ -169,7 +181,7 @@ const Home = () => {
                 </div>
               </div>
             </div>
-            <div className="card-service bg-image type1">
+            <div className="card-service bg-image  type1">
               <div className="content-service">
                 <img src={digitalmarketing} alt="" />
 
@@ -184,7 +196,7 @@ const Home = () => {
                 </div>
               </div>
             </div>
-            <div className="card-service bg-image typeai">
+            <div className="card-service bg-image  typeai">
               <div className="content-service">
                 <img src={ai} alt="" />
 
@@ -202,7 +214,7 @@ const Home = () => {
                 </div>
               </div>
             </div>
-            <div className="card-service bg-image type8">
+            <div className="card-service bg-image  type8">
               <div className="content-service">
                 <img src={webdev} alt="" />
 
@@ -217,7 +229,7 @@ const Home = () => {
                 </div>
               </div>
             </div>
-            <div className="card-service bg-image type8">
+            <div className="card-service bg-image  type8">
               <div className="content-service">
                 <img src={UIUX} alt="" />
 
@@ -235,7 +247,7 @@ const Home = () => {
                 </div>
               </div>
             </div>
-            <div className="card-service bg-image typemobile">
+            <div className="card-service bg-image  typemobile">
               <div className="content-service">
                 <img src={influncer} alt="" />
 
@@ -253,7 +265,7 @@ const Home = () => {
                 </div>
               </div>
             </div>
-            <div className="card-service bg-image type9">
+            <div className="card-service bg-image  type9">
               <div className="content-service">
                 <img src={digitalmarketing} alt="" />
 
@@ -271,7 +283,7 @@ const Home = () => {
                 </div>
               </div>
             </div>
-            <div className="card-service bg-image type7">
+            <div className="card-service bg-image  type7">
               <div className="content-service">
                 <img src={influncer} alt="" />
 
@@ -290,7 +302,7 @@ const Home = () => {
                 </div>
               </div>
             </div>
-            <div className="card-service bg-image typecrowd">
+            <div className="card-service bg-image  typecrowd">
               <div className="content-service">
                 <img src={crowd} alt="" />
 
