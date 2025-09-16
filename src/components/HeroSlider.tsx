@@ -28,7 +28,7 @@ export default function HeroSlider() {
   }, [totalSlides]);
 
   return (
-    <div className="relative w-full min-h-screen md:h-[85vh] overflow-hidden">
+    <div className="relative w-full min-h-screen md:h-[85vh] overflow-hidden heroSlider">
       {/* Slide 1 */}
       <div
         className={`absolute inset-0 transition-opacity duration-1000 ${
@@ -36,7 +36,7 @@ export default function HeroSlider() {
         }`}
       >
         <img src={web3} alt="Slide 1" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-black/40 flex flex-col justify-end items-start px-6 md:px-20 pb-32 left-0">
+        <div className="absolute inset-0 bg-black/40 flex flex-col justify-end items-start px-6 md:px-20 pb-32 left-0 inner_content_hero">
           <div className="container ">
             <div className="flex flex-col gap-6 max-w-3xl sm:w-full">
               <h1 className="text-white text-3xl md:text-7xl font-bold heading-hero">
@@ -67,7 +67,7 @@ export default function HeroSlider() {
           alt="Slide 2"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/40 flex flex-col justify-end items-start px-6 md:px-20 pb-32">
+        <div className="absolute inset-0 bg-black/40 flex flex-col justify-end items-start px-6 md:px-20 pb-32 inner_content_hero">
           <div className="container">
             <div className="flex flex-col gap-6 max-w-3xl sm:w-full">
               <h1 className="text-white text-3xl md:text-7xl font-bold heading-hero">
@@ -94,7 +94,7 @@ export default function HeroSlider() {
         }`}
       >
         <img src={ai} alt="Slide 3" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-black/40 flex flex-col justify-end items-start px-6 md:px-20 pb-32">
+        <div className="absolute inset-0 bg-black/40 flex flex-col justify-end items-start px-6 md:px-20 pb-32 inner_content_hero">
           <div className="container">
             <div className="flex flex-col gap-6 max-w-3xl sm:w-full">
               <h1 className="text-white text-3xl md:text-7xl font-bold heading-hero">
@@ -116,7 +116,7 @@ export default function HeroSlider() {
       </div>
 
       {/* --- Indicators & mute button --- */}
-      <div className="absolute bottom-6 right-6 z-50">
+      <div className="absolute bottom-6 right-6 z-50 bottom_select">
         <div className="flex items-center gap-3 bg-black/40 px-3 py-2 rounded-full backdrop-blur-sm">
           {/* Indicators */}
           <div className="flex gap-3 items-center">

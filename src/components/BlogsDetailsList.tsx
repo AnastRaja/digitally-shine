@@ -4,30 +4,23 @@ import {ArrowRight, ArrowUpRight} from "lucide-react";
 import axios from "axios";
 import {Link, useLocation} from "react-router-dom";
 
-export default function LatestInsights() {
+export default function LatestInsights({currentSlug}) {
+  const [blogs, setBlogs] = useState([]);
+
   useEffect(() => {
     getAllblogs();
-  }, []);
-
-  const [blogs, setblogs] = useState([]);
+  }, [currentSlug]);
 
   const getAllblogs = async () => {
     const resp = await axios.get(
       "https://blogapiadroits.onrender.com/api/blogs"
     );
 
-    const arr = [];
+    // Filter out the current blog
+    const filtered = resp.data.filter((post) => post.slug !== currentSlug);
 
-    for (let i = 0; i < resp.data.length; i++) {
-      const element = resp.data[i];
-      // console.log(i);
-
-      if (i < 4) {
-        arr.push(element);
-      }
-    }
-    // console.log(arr);
-    setblogs(arr);
+    // Take only the first 4 after filtering
+    setBlogs(filtered.slice(0, 4));
   };
 
   return (
@@ -35,11 +28,11 @@ export default function LatestInsights() {
       <div className="grid lg:grid-cols-2 lg:gap-16 items-start">
         {/* Left Side */}
         <div className="lg:col-span-1 flex flex-col items-start">
-          <div className="content-about">
+          {/* <div className="content-about">
             <span>Our Blog</span>
-          </div>
+          </div> */}
           <h2 className=" font-bold  mb-6 blog-text_ text-white">
-            Latest insights
+            Recent insights
           </h2>
           <p className="text-[1rem]">
             Our blog delivers fresh perspectives on business growth, innovation,
@@ -48,12 +41,6 @@ export default function LatestInsights() {
         </div>
 
         {/* Right Side - Blog List */}
-        <div className="lg:col-span-1 space-y-10 blog-list cursor-pointer align-right ourblog_section">
-          <button className="inline-flex items-center px-5 py-3 border rounded-md font-medium text-gray-700 hero-button transition h-[52px]">
-            See All Insights
-            <ArrowRight className="ml-2 w-4 h-4" />
-          </button>
-        </div>
       </div>
       <div className="grid lg:grid-cols-2 gap-3 items-start mt-14">
         {blogs.map((post) => (

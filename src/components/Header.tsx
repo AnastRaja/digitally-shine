@@ -3,6 +3,12 @@ import {Link, useLocation} from "react-router-dom";
 import {Menu, X, ChevronRight} from "lucide-react";
 import {Button} from "./ui/button";
 import Logo from "../assets/logo.png";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false); // mobile menu
@@ -92,27 +98,142 @@ const Header = () => {
 
         {/* Mobile nav */}
         {isMenuOpen && (
-          <div className="lg:hidden py-4 border-t border-primary/20 bg-background/95 backdrop-blur-sm">
+          <div className="lg:hidden py-4  backdrop-blur-sm">
             <div className="flex flex-col space-y-4">
-              {navigation.map((item) => (
-                <Link
-                  key={item.name}
-                  to={item.href}
-                  className={`font-medium py-2 transition-all duration-300 ease-smooth hover:text-primary ${
-                    isActive(item.href) ? "text-primary" : "text-foreground"
-                  }`}
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item.name}
-                </Link>
-              ))}
-              <div className="flex flex-col space-y-3 pt-4 border-t border-primary/20">
-                <Button className="btn-primary">Contact Us</Button>
+              {/* Normal links */}
+              {navigation.map((item) =>
+                item.megaMenu ? (
+                  <Accordion type="single" collapsible key={item.name}>
+                    <AccordionItem value="services" className="border-0">
+                      <AccordionTrigger className="font-medium text-foreground hover:text-primary p-0 border-0">
+                        {item.name}
+                      </AccordionTrigger>
+                      <AccordionContent>
+                        <ul className="flex flex-col space-y-3 pl-4 text-sm text-foreground mt-2">
+                          <li>
+                            <Link
+                              to="/services/suitecommerce"
+                              onClick={() => setIsMenuOpen(false)}
+                              className="hover:text-primary flex items-center justify-between"
+                            >
+                              WEB3 Marketing{" "}
+                              <ChevronRight className="w-4 h-4" />
+                            </Link>
+                          </li>
+                          <li>
+                            <Link
+                              to="/services/suitecommerce-advanced"
+                              onClick={() => setIsMenuOpen(false)}
+                              className="hover:text-primary flex items-center justify-between"
+                            >
+                              Digital Marketing{" "}
+                              <ChevronRight className="w-4 h-4" />
+                            </Link>
+                          </li>
+                          <li>
+                            <Link
+                              to="/services/suitecommerce-advanced"
+                              onClick={() => setIsMenuOpen(false)}
+                              className="hover:text-primary flex items-center justify-between"
+                            >
+                              AI Marketing <ChevronRight className="w-4 h-4" />
+                            </Link>
+                          </li>
+                          <li>
+                            <Link
+                              to="/services/suitecommerce-advanced"
+                              onClick={() => setIsMenuOpen(false)}
+                              className="hover:text-primary flex items-center justify-between"
+                            >
+                              Web Development & Web3 Development
+                              <ChevronRight className="w-4 h-4" />
+                            </Link>
+                          </li>
+                          <li>
+                            <Link
+                              to="/services/suitecommerce-advanced"
+                              onClick={() => setIsMenuOpen(false)}
+                              className="hover:text-primary flex items-center justify-between"
+                            >
+                              UI/UX & Graphics Designing{" "}
+                              <ChevronRight className="w-4 h-4" />
+                            </Link>
+                          </li>
+                          <li>
+                            <Link
+                              to="/services/suitecommerce-advanced"
+                              onClick={() => setIsMenuOpen(false)}
+                              className="hover:text-primary flex items-center justify-between"
+                            >
+                              Mobile App Design & Development{" "}
+                              <ChevronRight className="w-4 h-4" />
+                            </Link>
+                          </li>
+                          <li>
+                            <Link
+                              to="/services/suitecommerce-advanced"
+                              onClick={() => setIsMenuOpen(false)}
+                              className="hover:text-primary flex items-center justify-between"
+                            >
+                              Digital Marketing Course{" "}
+                              <ChevronRight className="w-4 h-4" />
+                            </Link>
+                          </li>
+                          <li>
+                            <Link
+                              to="/services/suitecommerce-advanced"
+                              onClick={() => setIsMenuOpen(false)}
+                              className="hover:text-primary flex items-center justify-between"
+                            >
+                              PR & Influencer Marketing{" "}
+                              <ChevronRight className="w-4 h-4" />
+                            </Link>
+                          </li>
+                          <li>
+                            <Link
+                              to="/services/suitecommerce-advanced"
+                              onClick={() => setIsMenuOpen(false)}
+                              className="hover:text-primary flex items-center justify-between"
+                            >
+                              Crowd Marketing{" "}
+                              <ChevronRight className="w-4 h-4" />
+                            </Link>
+                          </li>
+                          <li>
+                            <Link
+                              to="/services/suitecommerce-advanced"
+                              onClick={() => setIsMenuOpen(false)}
+                              className="hover:text-primary flex items-center justify-between"
+                            >
+                              Google My Business{" "}
+                              <ChevronRight className="w-4 h-4" />
+                            </Link>
+                          </li>
+                        </ul>
+                      </AccordionContent>
+                    </AccordionItem>
+                  </Accordion>
+                ) : (
+                  <Link
+                    key={item.name}
+                    to={item.href}
+                    className={`font-medium py-2 transition-all duration-300 ease-smooth hover:text-primary ${
+                      isActive(item.href) ? "text-primary" : "text-foreground"
+                    }`}
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {item.name}
+                  </Link>
+                )
+              )}
+
+              {/* CTA button */}
+              <div className="flex flex-col space-y-3 pt-4 ">
+                <Button className="header-button">Contact Us</Button>
               </div>
             </div>
           </div>
         )}
-
         {/* Backdrop */}
         <div
           onClick={() => setServicesOpen(false)}

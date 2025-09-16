@@ -60,11 +60,13 @@ export default function TestimonialSection() {
           modules={[Navigation]}
           navigation
           spaceBetween={30}
-          slidesPerView={3} // show 2 slides side by side
+          slidesPerView={1} // show 2 slides side by side
           slidesPerGroup={1} // move 1 slide at a time
           breakpoints={{
-            768: {slidesPerView: 2},
-            1024: {slidesPerView: 3},
+            0: {slidesPerView: 1}, // mobile: 1 slide
+            640: {slidesPerView: 2}, // small devices: 2 slides
+            768: {slidesPerView: 2}, // tablets: 2 slides
+            1024: {slidesPerView: 3}, // desktops: 3 slides
           }}
         >
           {testimonials.map((item, index) => (

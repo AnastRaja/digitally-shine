@@ -88,16 +88,16 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center space-x-3 text-muted-foreground">
                 <Mail className="w-5 h-5 " />
-                <span>hello@marketingagency.com</span>
+                <span>digitaladroits@gmail.com</span>
               </div>
               <div className="flex items-center space-x-3 text-muted-foreground">
                 <Phone className="w-5 h-5 " />
-                <span>+1 (555) 123-4567</span>
+                <span>+91 79049 41113</span>
               </div>
-              <div className="flex items-center space-x-3 text-muted-foreground">
+              {/* <div className="flex items-center space-x-3 text-muted-foreground">
                 <MapPin className="w-5 h-5 " />
                 <span>123 Business Ave, Suite 100, City, State 12345</span>
-              </div>
+              </div> */}
             </div>
           </div>
 

@@ -35,8 +35,8 @@
 
 //   const categories = ['All', ...Array.from(new Set(blogs.map(blog => blog.category)))];
 
-//   const filteredBlogs = selectedCategory === 'All' 
-//     ? blogs 
+//   const filteredBlogs = selectedCategory === 'All'
+//     ? blogs
 //     : blogs.filter(blog => blog.category === selectedCategory);
 
 //   const featuredBlogs = blogs.filter(blog => blog.featured);
@@ -61,7 +61,7 @@
 //               Marketing <span className="text-gradient">Insights</span>
 //             </h1>
 //             <p className="text-xl lg:text-2xl text-white/90 leading-relaxed">
-//               Stay ahead with expert insights, proven strategies, and the latest trends 
+//               Stay ahead with expert insights, proven strategies, and the latest trends
 //               in digital marketing, SEO, and brand development.
 //             </p>
 //           </div>
@@ -77,8 +77,8 @@
 //                 key={category}
 //                 variant={selectedCategory === category ? "default" : "outline"}
 //                 onClick={() => setSelectedCategory(category)}
-//                 className={selectedCategory === category 
-//                   ? "btn-primary" 
+//                 className={selectedCategory === category
+//                   ? "btn-primary"
 //                   : "border-primary text-primary hover:bg-primary hover:text-primary-foreground"
 //                 }
 //               >
@@ -97,7 +97,7 @@
 //             <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-12 text-center">
 //               Featured <span className="text-gradient">Articles</span>
 //             </h2>
-            
+
 //             <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
 //               {featuredBlogs.map((blog) => (
 //                 <Card key={blog.id} className="bg-card border-primary/20 group hover:border-primary/40 transition-smooth">
@@ -120,7 +120,7 @@
 //                     <p className="text-muted-foreground leading-relaxed mb-6 line-clamp-3">
 //                       {blog.description}
 //                     </p>
-                    
+
 //                     <div className="flex items-center justify-between text-sm text-muted-foreground mb-6">
 //                       <div className="flex items-center space-x-4">
 //                         <div className="flex items-center space-x-1">
@@ -133,7 +133,7 @@
 //                         </div>
 //                       </div>
 //                     </div>
-                    
+
 //                     <Link to={`/blog/${blog.slug}`}>
 //                       <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground w-full group">
 //                         Read More
@@ -154,7 +154,7 @@
 //           <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-12 text-center">
 //             {selectedCategory === 'All' ? 'Latest' : selectedCategory} <span className="text-gradient">Articles</span>
 //           </h2>
-          
+
 //           {regularBlogs.length > 0 ? (
 //             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
 //               {regularBlogs.map((blog) => (
@@ -175,7 +175,7 @@
 //                     <p className="text-muted-foreground leading-relaxed mb-6 line-clamp-3">
 //                       {blog.description}
 //                     </p>
-                    
+
 //                     <div className="flex items-center justify-between text-sm text-muted-foreground mb-6">
 //                       <div className="flex items-center space-x-4">
 //                         <div className="flex items-center space-x-1">
@@ -188,7 +188,7 @@
 //                         </div>
 //                       </div>
 //                     </div>
-                    
+
 //                     <Link to={`/blog/${blog.slug}`}>
 //                       <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground w-full group">
 //                         Read More
@@ -204,7 +204,7 @@
 //               <p className="text-xl text-muted-foreground mb-4">
 //                 No articles found in the "{selectedCategory}" category.
 //               </p>
-//               <Button 
+//               <Button
 //                 onClick={() => setSelectedCategory('All')}
 //                 className="btn-primary"
 //               >
@@ -223,7 +223,7 @@
 //               Stay Updated
 //             </h2>
 //             <p className="text-xl text-white/90 mb-8 leading-relaxed">
-//               Subscribe to our newsletter and never miss the latest marketing insights, 
+//               Subscribe to our newsletter and never miss the latest marketing insights,
 //               strategies, and industry trends delivered straight to your inbox.
 //             </p>
 //             <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
@@ -245,24 +245,30 @@
 
 // export default BlogList;
 
-import React from 'react'
-import BlogListSection from "../components/BlogListSection"
-import { useSEO, generatePageTitle } from '../utils/seo';
+import React from "react";
+import BlogListSection from "../components/BlogListSection";
+import {useSEO, generatePageTitle} from "../utils/seo";
 
 function BlogList() {
   useSEO({
-    title: generatePageTitle('Marketing Blog'),
-    description: 'Stay updated with the latest marketing trends, strategies, and insights. Expert tips on digital marketing, SEO, social media, and brand development.',
-    keywords: 'marketing blog, digital marketing tips, SEO strategies, social media marketing, content marketing, brand development',
+    title: generatePageTitle("Marketing Blog"),
+    description:
+      "Stay updated with the latest marketing trends, strategies, and insights. Expert tips on digital marketing, SEO, social media, and brand development.",
+    keywords:
+      "marketing blog, digital marketing tips, SEO strategies, social media marketing, content marketing, brand development",
     canonical: `${window.location.origin}/blog`,
   });
   return (
-     <main className=" mx-auto px-4 sm:px-6 lg:px-8 section-padding py-30 bg-black">
-      <div className='container'>
-<BlogListSection/>
+    <main className=" mx-auto px-4 sm:px-6 lg:px-8 section-padding py-30 bg-black">
+      <div className="container padding_mobile">
+        <div className="blog_banner_new">
+          <h1>Explore Our blog</h1>
+          <p>Insights, trends, and strategies to help your business grow.</p>
+        </div>
+        <BlogListSection />
       </div>
-     </main>
-  )
+    </main>
+  );
 }
 
-export default BlogList
+export default BlogList;

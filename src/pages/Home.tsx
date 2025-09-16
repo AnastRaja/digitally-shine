@@ -32,6 +32,7 @@ import influncer from "../assets/icon/influncer.png";
 import crowd from "../assets/icon/crowd.png";
 import ReactPlayer from "react-player";
 import HeroClip from "../assets/bg-video.mp4";
+import ContactGlobal from "./ContactGlobal";
 const Home = () => {
   useSEO({
     title: generatePageTitle("Home"),
@@ -78,9 +79,9 @@ const Home = () => {
       {/* Hero Section */}
       <HeroSlider />
 
-      <section className="py-32  bg-black ">
+      <section className="py-32  bg-black relative before_class2">
         <div className="container">
-          <div className="grid grid-cols-2 lg:grid-cols-2 gap-11">
+          <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2  gap-11">
             <div>
               <img
                 src={about}
@@ -89,7 +90,7 @@ const Home = () => {
               />
             </div>
             <div className="content-about">
-              <span className="text-sm">About Us</span>
+              <span className="text-sm relative z-10">About Us</span>
               <h2 className="">We Don’t Just Market. We Redefine Growth.</h2>
               <p className="font-light">
                 Are you tired of the same old marketing strategies that just
@@ -124,7 +125,7 @@ const Home = () => {
           style={{width: "100%", height: "auto", aspectRatio: "16/9"}}
         /> */}
         <div className="container">
-          <div className="grid grid-cols-2 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="content-about">
               <span>Our Solutions</span>
               <h2>Our Services That Power Your Growth</h2>
@@ -139,7 +140,7 @@ const Home = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mt-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10  lg:mt-12 sm:mt-0 relative z-10">
             {/* {services.map((service, index) => {
               const IconComponent = service.icon;
               return (
@@ -324,9 +325,9 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="py-24  bg-[#151517] ">
+      <section className="py-24  bg-[#151517] relative before_class3 ">
         <div className="container">
-          <div className="grid grid-cols-2 lg:grid-cols-2 gap-11">
+          <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-11">
             <div>
               <img
                 src={why}
@@ -362,7 +363,7 @@ const Home = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 lg:grid-cols-3 gap-14 mt-9">
+          <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 lg:gap-14 mt-9">
             <div className="card-about">
               <div>
                 <h3 className="!text-2xl">
@@ -405,7 +406,7 @@ const Home = () => {
         </div>
       </section>
       <section className="py-32  pb-0 bg-black ">
-        <div className="container bg_new py-16 rounded-2xl">
+        <div className="container bg_new py-16 rounded-2xl relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-1 gap-11">
             <div className="content-about flex flex-col items-center text-center">
               <span className="border !bg-transparent border-1solid">
@@ -414,7 +415,7 @@ const Home = () => {
               <h2> How We Make It Happen</h2>
             </div>
           </div>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-14 ">
+          <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 lg:gap-14 ">
             <div className="card-about  !p-6 rounded-md">
               <div>
                 <h3 className="!mb-0">Discover </h3>
@@ -458,40 +459,12 @@ const Home = () => {
         <TestimonialSection />
       </section>
 
-      <section className="py-32 pt-0 bg-[#151517] ">
+      <section className="py-32 pt-0 bg-[#151517] relative before_class">
         <Blogsection />
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding  text-center CTA_section">
-        <div className="container-custom">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-4xl lg:text-6xl font-bold text-white mb-6">
-              From Ideas to Impact
-            </h2>
-            <p className="text-xl text-white/90 mb-8 leading-relaxed">
-              We transform your vision into digital experiences that scale.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/contact">
-                {/* <Button
-                  size="lg"
-                  variant="default"
-                  className="inline-flex items-center px-5 py-3 border rounded-md font-medium text-gray-700 hero-button transition hover:bg-primary"
-                >
-                  Turn My Idea Into Reality
-
-                  <ArrowRight className="ml-2 w-5 h-5" />
-                </Button> */}
-                <button className="inline-flex items-center px-3 py-3 !mt-0 border rounded-md font-medium text-gray-700 hero-button transition">
-                  Turn My Idea Into Reality
-                  <ArrowRight className="ml-2 w-4 h-4" />
-                </button>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ContactGlobal />
     </>
   );
 };

@@ -2,6 +2,13 @@ import React, {useEffect, useState} from "react";
 import BlogCard from "./BlogCard";
 import axios from "axios";
 import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import {
   ArrowRight,
   CheckCircle,
   Star,
@@ -51,17 +58,38 @@ const BlogSection = () => {
   };
 
   return (
-    <div className="bg-black py-16 px-4 sm:px-6 lg:px-8">
+    <div className="bg-black py-16 ">
       <div className="max-w-7xl mx-auto">
-        <div className="flex justify-between items-center mb-12 flex-col sm:flex-row gap-6">
+        {/* <div className="flex justify-between items-center mb-12 flex-col sm:flex-row gap-6">
           <h2 className="text-6xl font-bold text-gray-900  text-center sm:text-left">
             Popular Blogs
           </h2>
-        </div>
+        </div> */}
       </div>
       <div class="row g-3">
-        <div class="col-12 col-lg-3  p-3">
-          <div className="flex flex-col justify-center gap-2 flex-wrap">
+        <div className="col-12 col-lg-3 p-3">
+          {/* Mobile: Select dropdown */}
+          <div className="block lg:hidden">
+            <Select
+              value={selectedCategory}
+              onValueChange={(value) => getBlogs(value)}
+            >
+              <SelectTrigger className="w-full">
+                <SelectValue placeholder="Select category" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="All">All</SelectItem>
+                {category.map((cat, i) => (
+                  <SelectItem key={i} value={cat}>
+                    {cat}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
+
+          {/* Desktop: Button list */}
+          <div className="hidden lg:flex flex-col justify-center gap-2 flex-wrap">
             {/* All button */}
             <button
               className={`header-button blog_button_cat blog_button ${

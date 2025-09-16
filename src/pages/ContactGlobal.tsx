@@ -162,7 +162,7 @@ const Contact = () => {
   return (
     <>
       {/* Contact Form & Info Section */}
-      <section className="section-padding bg-black pt-32 contact_bg">
+      <section className="section-padding bg-black pt-32 contact_bg_new">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-12 justify-center items-center gap-12 form_contact">
             <div className=" lg:col-span-3 justify-self-auto"></div>
@@ -575,30 +575,6 @@ const Contact = () => {
                   </form>
                 </CardContent>
               </Card>
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-2 mt-3">
-                <div className="lg:col-span-12">
-                  <h3 className="font-semibold text-foreground mb-1 text-center">
-                    Connect With Us
-                  </h3>
-                  <div className="flex items-center justify-center space-x-4 mt-4">
-                    {socialLinks.map((social) => {
-                      const IconComponent = social.icon;
-                      return (
-                        <a
-                          key={social.name}
-                          href={social.href}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="w-12 h-12 bg-muted rounded-lg flex items-center justify-center text-muted-foreground hover:bg-[#a100ff] hover:text-primary-foreground transition-all duration-300 ease-smooth"
-                          aria-label={social.name}
-                        >
-                          <IconComponent className="w-5 h-5" />
-                        </a>
-                      );
-                    })}
-                  </div>
-                </div>
-              </div>
             </div>
             <div className="lg:col-span-3 gap-3"></div>
           </div>
