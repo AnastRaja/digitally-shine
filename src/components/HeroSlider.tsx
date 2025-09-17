@@ -13,6 +13,7 @@ import {
 import web3 from "../assets/web3marketing.jpg";
 import digital from "../assets/digital.jpg";
 import ai from "../assets/ai.jpg";
+import {Link} from "react-router-dom";
 
 export default function HeroSlider() {
   const [current, setCurrent] = useState(0);
@@ -48,9 +49,11 @@ export default function HeroSlider() {
                 we build decentralized strategies that connect communities and
                 create influence.
               </p>
-              <button className="mt-4 px-3 py-3 h-[52px] flex justify-between rounded-lg gap-2 items-center transition hero-button">
-                Book a Free Discovery Call <ChevronRight />{" "}
-              </button>
+              <Link to="/contact">
+                <button className="mt-4 px-3 py-3 h-[52px] flex justify-between rounded-lg gap-2 items-center transition hero-button">
+                  Book a Free Discovery Call <ChevronRight />{" "}
+                </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -79,9 +82,11 @@ export default function HeroSlider() {
                 <strong> digital marketing strategy</strong> that connects,
                 converts, and dominates your market.
               </p>
-              <button className="mt-4 px-3 py-3 h-[52px] flex justify-between rounded-lg gap-2 items-center transition hero-button">
-                Launch Your Digital Legacy <ChevronRight />{" "}
-              </button>
+              <Link to="/contact">
+                <button className="mt-4 px-3 py-3 h-[52px] flex justify-between rounded-lg gap-2 items-center transition hero-button">
+                  Launch Your Digital Legacy <ChevronRight />{" "}
+                </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -106,17 +111,19 @@ export default function HeroSlider() {
                 marketing to hyper-personalize campaigns, predict customer
                 behavior, and maximize your ROI.
               </p>
-              <button className="mt-4 px-3 py-3 h-[52px] flex justify-between rounded-lg gap-2 items-center transition hero-button">
-                Book Free Consultation
-                <ChevronRight />{" "}
-              </button>
+              <Link to="/contact">
+                <button className="mt-4 px-3 py-3 h-[52px] flex justify-between rounded-lg gap-2 items-center transition hero-button">
+                  Book Free Consultation
+                  <ChevronRight />{" "}
+                </button>
+              </Link>
             </div>
           </div>
         </div>
       </div>
 
       {/* --- Indicators & mute button --- */}
-      <div className="absolute bottom-6 right-6 z-50 bottom_select">
+      <div className="absolute bottom-6 right-36 z-50 bottom_select">
         <div className="flex items-center gap-3 bg-black/40 px-3 py-2 rounded-full backdrop-blur-sm">
           {/* Indicators */}
           <div className="flex gap-3 items-center">

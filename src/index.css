@@ -209,7 +209,7 @@ All colors MUST be HSL.
 
 .hero-button:hover {
   background: var(--primary-gradient);
-  border-color: #a100ff;
+  border-color: #a100ff !important;
 }
 
 .content-about span {
@@ -237,6 +237,7 @@ All colors MUST be HSL.
   opacity: 0.7;
   line-height: 26px;
   margin-bottom: 19px;
+  letter-spacing: 0.7px;
 }
 .content-about button {
   background: #a100ff;
@@ -271,11 +272,13 @@ All colors MUST be HSL.
   font-weight: 400;
 }
 .card-about p {
-  font-weight: 400;
   font-size: 1rem;
+  font-weight: 300;
   opacity: 0.7;
-  letter-spacing: -0.02em;
+  line-height: 24px;
+  margin-bottom: 19px;
   color: #fff !important;
+  letter-spacing: 0.7px;
 }
 
 .bg-image {
@@ -351,6 +354,7 @@ All colors MUST be HSL.
   opacity: 0.7;
   line-height: 26px;
   margin-bottom: 19px;
+  letter-spacing: 0.7px;
 }
 .content-service button {
   font-size: 14px;
@@ -497,7 +501,7 @@ All colors MUST be HSL.
   color: #fff;
   gap: 8px;
   padding: 13px 0px;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #cccccc33;
 }
 .header_nave_link:hover {
   color: #b647f6f5 !important;
@@ -577,7 +581,7 @@ a:hover {
   background-image: url("./assets/bg_servicenew.jpg");
   background-size: cover;
   background-position: center;
-  /* background-attachment: fixed; */
+  background-attachment: fixed;
   background-repeat: no-repeat;
 }
 .content-service {
@@ -633,7 +637,31 @@ a:hover {
     rgba(255, 255, 255, 0) 100%
   );
 }
+.heaedr_link {
+  width: 45px;
+  height: 44px;
+  background: #a100ff;
+  display: grid;
+  place-content: center;
+  border-radius: 40px;
+}
+.pulse {
+  animation: pulse-animation 2s infinite;
+}
 
+@keyframes pulse-animation {
+  0% {
+    box-shadow: 0 0 0 0px rgba(98, 0, 115, 0.585);
+  }
+  100% {
+    box-shadow: 0 0 0 20px rgba(182, 1, 254, 0);
+  }
+}
+.mobile_contanct_footer {
+  justify-content: center;
+  align-items: end;
+  gap: 19px;
+}
 /* .content-service {
   
   background: rgba(8, 8, 8, 0.25);
@@ -678,6 +706,7 @@ a:hover {
   opacity: 0.7;
   line-height: 26px;
   margin-bottom: 19px;
+  letter-spacing: 0.7px;
 }
 .contact_bg {
   background-image: url("./assets/bg_contecnt.jpg");

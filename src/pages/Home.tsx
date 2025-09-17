@@ -26,46 +26,24 @@ import TestimonialSection from "@/components/TestimonialSection";
 import web3 from "../assets/icon/web3.png";
 import digitalmarketing from "../assets/icon/digitalmarketing.png";
 import ai from "../assets/icon/AI.png";
-import webdev from "../assets/icon/webdev.png";
+import webdev from "../assets/icon/mobileapp.png";
 import UIUX from "../assets/icon/UIUX.png";
 import influncer from "../assets/icon/influncer.png";
+import web3dev from "../assets/icon/web3dev.png";
 import crowd from "../assets/icon/crowd.png";
+
 import ReactPlayer from "react-player";
 import HeroClip from "../assets/bg-video.mp4";
 import ContactGlobal from "./ContactGlobal";
 const Home = () => {
   useSEO({
-    title: generatePageTitle("Home"),
+    title: generatePageTitle("The Best Digital Marketing Company"),
     description:
-      "Professional marketing agency driving growth through innovative strategies. SEO, social media, content marketing, and brand development services.",
+      "We are experts in making you a brand. As the best Digital marketing company, we help you grow your business to the top level. Join us.",
     keywords:
-      "marketing agency, digital marketing, SEO, social media marketing, brand development, content marketing",
+      "Digital marketing company, top digital marketing company, best digital marketing company, digital marketing services, web3 marketing, web3 marketing service, branding.",
     canonical: window.location.origin,
   });
-
-  const testimonials = [
-    {
-      name: "Sarah Johnson",
-      company: "TechStart Inc.",
-      rating: 5,
-      text:
-        "Working with this team transformed our online presence. Our leads increased by 300% in just 6 months.",
-    },
-    {
-      name: "Michael Chen",
-      company: "GrowthCorp",
-      rating: 5,
-      text:
-        "The most professional marketing team we've worked with. Their strategic approach delivered exceptional results.",
-    },
-    {
-      name: "Emily Rodriguez",
-      company: "Innovate Solutions",
-      rating: 5,
-      text:
-        "Outstanding service and incredible ROI. They truly understand modern marketing and deliver on their promises.",
-    },
-  ];
 
   const stats = [
     {number: "500+", label: "Projects Completed"},
@@ -105,7 +83,9 @@ const Home = () => {
                 At Adroits Digital, we believe marketing isn’t about shouting
                 the loudest; it’s about speaking the smartest.{" "}
               </p>
-              <button className="">Know More About Us</button>
+              <Link to="/contact">
+                <button className="">Know More About Us</button>
+              </Link>
             </div>
           </div>
         </div>
@@ -217,13 +197,34 @@ const Home = () => {
             </div>
             <div className="card-service bg-image  type8">
               <div className="content-service">
+                <img src={web3dev} alt="" />
+
+                <div>
+                  <h3>Web3 Development Services</h3>
+                </div>
+                <div>
+                  <p>
+                    We create secure blockchain platforms, dApps, and smart
+                    contracts to power your decentralized future.
+                  </p>
+                  <button className="flex items-center gap-2">
+                    Learn More <ChevronRight size={15} />
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div className="card-service bg-image  type8">
+              <div className="content-service">
                 <img src={webdev} alt="" />
 
                 <div>
-                  <h3>Web Development & Web3 Development </h3>
+                  <h3>Web & Mobile App Development Services </h3>
                 </div>
                 <div>
-                  <p>Custom websites, blockchain platforms, smart contracts.</p>
+                  <p>
+                    We design and develop custom websites and high-performance
+                    mobile apps for iOS and Android.
+                  </p>
                   <button className="flex items-center gap-2">
                     Learn More <ChevronRight size={15} />
                   </button>
@@ -459,7 +460,7 @@ const Home = () => {
         <TestimonialSection />
       </section>
 
-      <section className="py-32 pt-0 bg-[#151517] relative before_class">
+      <section className="py-32 pt-0 pb-0 bg-[#151517] relative before_class">
         <Blogsection />
       </section>
 

@@ -3,6 +3,9 @@ import {Link, useLocation} from "react-router-dom";
 import {Menu, X, ChevronRight} from "lucide-react";
 import {Button} from "./ui/button";
 import Logo from "../assets/logo.png";
+import {FaWhatsapp} from "react-icons/fa";
+import {Mail} from "lucide-react";
+
 import {
   Accordion,
   AccordionContent,
@@ -79,7 +82,23 @@ const Header = () => {
 
           {/* CTA */}
           <div className="hidden lg:flex items-center space-x-4 ">
-            <button className="header-button !py-3 !px-5">Get Started</button>
+            <a
+              href="mailto:digitaladroits@gmail.com?subject=Inquiry from Website&body=Hello, I would like to know more about your services."
+              target="_blank"
+              className="heaedr_link pulse"
+            >
+              <Mail size={19} />
+            </a>
+            <a
+              href="https://wa.me/7904941113/?text=Hi AdroitsDigital"
+              target="_blank"
+              className="heaedr_link pulse"
+            >
+              <FaWhatsapp size={19} />
+            </a>
+            <Link to="/contact">
+              <button className="header-button !py-3 !px-5">Get Started</button>
+            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -145,7 +164,7 @@ const Header = () => {
                               onClick={() => setIsMenuOpen(false)}
                               className="hover:text-primary flex items-center justify-between"
                             >
-                              Web Development & Web3 Development
+                              Web3 Development Service
                               <ChevronRight className="w-4 h-4" />
                             </Link>
                           </li>
@@ -165,7 +184,7 @@ const Header = () => {
                               onClick={() => setIsMenuOpen(false)}
                               className="hover:text-primary flex items-center justify-between"
                             >
-                              Mobile App Design & Development{" "}
+                              Web & Mobile App Development Services{" "}
                               <ChevronRight className="w-4 h-4" />
                             </Link>
                           </li>
@@ -228,8 +247,24 @@ const Header = () => {
               )}
 
               {/* CTA button */}
-              <div className="flex flex-col space-y-3 pt-4 ">
-                <Button className="header-button">Contact Us</Button>
+              <div className="flex  mobile_contanct_footer space-y-3 pt-4 ">
+                <a
+                  href="mailto:digitaladroits@gmail.com?subject=Inquiry from Website&body=Hello, I would like to know more about your services."
+                  target="_blank"
+                  className="heaedr_link pulse"
+                >
+                  <Mail size={19} />
+                </a>
+                <a
+                  href="https://wa.me/7904941113/?text=Hi AdroitsDigital"
+                  target="_blank"
+                  className="heaedr_link pulse"
+                >
+                  <FaWhatsapp size={19} />
+                </a>
+                <Link to="/contact">
+                  <Button className="header-button">Contact Us</Button>
+                </Link>
               </div>
             </div>
           </div>
@@ -302,7 +337,7 @@ const Header = () => {
                         className="hover:text-primary block header_nave_link"
                         onClick={() => setServicesOpen(false)}
                       >
-                        Web Development & Web3 Development
+                        Web3 Development
                         <ChevronRight />
                       </Link>
                     </li>
@@ -328,7 +363,7 @@ const Header = () => {
                         className="hover:text-primary block header_nave_link"
                         onClick={() => setServicesOpen(false)}
                       >
-                        Mobile App Design & Development
+                        Web & Mobile App Development Services
                         <ChevronRight />
                       </Link>
                     </li>
@@ -365,16 +400,6 @@ const Header = () => {
                         onClick={() => setServicesOpen(false)}
                       >
                         Crowd Marketing
-                        <ChevronRight />
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        to="/services/suitecommerce-advanced"
-                        className="hover:text-primary block header_nave_link"
-                        onClick={() => setServicesOpen(false)}
-                      >
-                        Google My Business
                         <ChevronRight />
                       </Link>
                     </li>

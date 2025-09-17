@@ -31,7 +31,7 @@ export default function LatestInsights() {
   };
 
   return (
-    <section className="py-16 pb-1 container mx-auto px-6">
+    <section className="py-16 pb-1 container mx-auto px-6 relative">
       <div className="grid lg:grid-cols-2 lg:gap-16 items-start">
         {/* Left Side */}
         <div className="lg:col-span-1 flex flex-col items-start">
@@ -49,10 +49,12 @@ export default function LatestInsights() {
 
         {/* Right Side - Blog List */}
         <div className="lg:col-span-1 space-y-10 blog-list cursor-pointer align-right ourblog_section">
-          <button className="inline-flex items-center px-5 py-3 border rounded-md font-medium text-gray-700 hero-button transition h-[52px]">
-            See All Insights
-            <ArrowRight className="ml-2 w-4 h-4" />
-          </button>
+          <Link to="/blog">
+            <button className="inline-flex items-center px-5 py-3 border rounded-md font-medium text-gray-700 hero-button transition h-[52px]">
+              See All Insights
+              <ArrowRight className="ml-2 w-4 h-4" />
+            </button>
+          </Link>
         </div>
       </div>
       <div className="grid lg:grid-cols-2 gap-3 items-start mt-14">

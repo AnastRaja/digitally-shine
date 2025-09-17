@@ -24,7 +24,7 @@ export default function LatestInsights({currentSlug}) {
   };
 
   return (
-    <section className="py-16 pb-1 container mx-auto px-6">
+    <section className="py-16 pb-1 container mx-auto px-6 relative">
       <div className="grid lg:grid-cols-2 lg:gap-16 items-start">
         {/* Left Side */}
         <div className="lg:col-span-1 flex flex-col items-start">

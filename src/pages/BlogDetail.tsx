@@ -24,11 +24,24 @@ import {
   Zap,
 } from "lucide-react";
 import BlogsDetailsList from "../components/BlogsDetailsList";
+import {useSEO, generatePageTitle} from "../utils/seo";
 
 export default function NetSuiteBlogHero() {
   const {slug} = useParams();
   const [blog, setBlog] = useState(null);
   const [loading, setLoading] = useState(true);
+
+  useSEO({
+    title: blog ? generatePageTitle(blog.title) : "Loading Blog...",
+    description:
+      blog?.metaDescription ||
+      blog?.excerpt ||
+      "Read our latest blog from the best digital marketing company.",
+    keywords:
+      blog?.keywords ||
+      "Digital marketing company, top digital marketing company, best digital marketing company, digital marketing services, web3 marketing, web3 marketing service, branding.",
+    canonical: window.location.href,
+  });
 
   useEffect(() => {
     if (!slug) return;
@@ -144,7 +157,7 @@ export default function NetSuiteBlogHero() {
           </div>
         </div>
       </article>
-      <section className="py-32 pt-0 bg-[#151517] relative before_class">
+      <section className="py-32 pt-0 pb-0 bg-[#151517] relative before_class">
         <BlogsDetailsList currentSlug={slug} />
       </section>
       <div>
