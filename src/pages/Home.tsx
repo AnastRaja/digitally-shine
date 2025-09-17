@@ -249,24 +249,7 @@ const Home = () => {
                 </div>
               </div>
             </div>
-            <div className="card-service bg-image  typemobile">
-              <div className="content-service">
-                <img src={influncer} alt="" />
 
-                <div>
-                  <h3>Mobile App Design & Development </h3>
-                </div>
-                <div>
-                  <p>
-                    We design and develop powerful mobile apps for both iOS and
-                    Android.
-                  </p>
-                  <button className="flex items-center gap-2">
-                    Learn More <ChevronRight size={15} />
-                  </button>
-                </div>
-              </div>
-            </div>
             <div className="card-service bg-image  type9">
               <div className="content-service">
                 <img src={digitalmarketing} alt="" />
