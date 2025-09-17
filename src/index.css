@@ -519,7 +519,7 @@ All colors MUST be HSL.
   color: #fff;
 }
 .bg_new {
-  background-image: url("./assets/bg_service.png");
+  background-image: url("./assets/bg_service.jpg");
   background-size: cover;
   background-position: center;
 }
@@ -574,7 +574,7 @@ a:hover {
     0 10px 15px -3px hsl(0 0% 0% / 0.1);
 }
 .solution_section {
-  background-image: url("./assets/bg_servicenew.png");
+  background-image: url("./assets/bg_servicenew.jpg");
   background-size: cover;
   background-position: center;
   /* background-attachment: fixed; */
@@ -680,17 +680,17 @@ a:hover {
   margin-bottom: 19px;
 }
 .contact_bg {
-  background-image: url("./assets/bg_contecnt.png");
+  background-image: url("./assets/bg_contecnt.jpg");
   background-size: cover;
   background-position: center;
 }
 .contact_bg_new {
-  background-image: url("./assets/commen-banner.png");
+  background-image: url("./assets/commen-banner.jpg");
   background-size: cover;
   background-position: center;
 }
 .blog_banner_new {
-  background-image: url("/src/assets/blog_banner.png");
+  background-image: url("/src/assets/bg_servicenew.jpg");
   background-size: 100%;
   background-position: center;
   display: flex;

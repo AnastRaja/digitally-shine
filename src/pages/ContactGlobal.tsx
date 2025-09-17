@@ -181,7 +181,7 @@ const Contact = () => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mt-9 form_contact">
             <div className="lg:col-span-3 gap-3"></div>
             <div className="lg:col-span-6 gap-3">
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-3 mb-3">
+              {/* <div className="grid grid-cols-1 lg:grid-cols-12 gap-3 mb-3">
                 {contactInfo.map((info, index) => {
                   const IconComponent = info.icon;
                   return (
@@ -201,16 +201,16 @@ const Contact = () => {
                             <p className="text-muted-foreground font-medium">
                               {info.details}
                             </p>
-                            {/* <p className="text-muted-foreground text-sm">
+                            <p className="text-muted-foreground text-sm">
                               {info.subDetails}
-                            </p> */}
+                            </p>
                           </div>
                         </div>
                       </CardContent>
                     </Card>
                   );
                 })}
-              </div>
+              </div> */}
               <Card className="bg-card !border-none p-4  paddin_o">
                 {/* <CardHeader>
                   <CardTitle className="text-3xl font-bold text-foreground">
