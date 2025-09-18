@@ -74,7 +74,7 @@ export default function TestimonialSection() {
         >
           {testimonials.map((item, index) => (
             <SwiperSlide key={index}>
-              <div className=" rounded-xl relative flex flex-col justify-between shadow-sm my-10 h-80 p-4  bg-[#151517] testimonial-card">
+              <div className=" rounded-xl relative flex flex-col justify-between shadow-sm   p-4  bg-[#151517] testimonial-card">
                 {/* Text */}
 
                 <div>

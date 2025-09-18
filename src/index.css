@@ -719,6 +719,12 @@ a:hover {
   margin-top: 10px;
   color: #a100ff87;
 }
+.swiper-slide {
+  height: -webkit-fill-available !important;
+  height: auto;
+
+  display: flex !important;
+}
 .contact_bg {
   background-image: url("./assets/bg_contecnt.jpg");
   background-size: cover;
