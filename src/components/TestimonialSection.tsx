@@ -6,12 +6,13 @@ import "swiper/css/navigation";
 import kmedit from "../assets/testi/KM-EDIT.png";
 import infograph from "../assets/testi/ifography.png";
 import lawblovks from "../assets/testi/lawblovks.png";
+import {FaQuoteLeft} from "react-icons/fa";
 const testimonials = [
   {
     logo: "https://avatar.iran.liara.run/public/boy",
     text:
       "Adroits Digital helped Infography.in boost visibility and drive higher profits with their smart marketing strategies. They are a team you can truly rely on for growth.",
-    authorImg: infograph,
+    authorImg: lawblovks,
     author: "Manoj",
     role: "CEO of Infography.in",
   },
@@ -27,7 +28,7 @@ const testimonials = [
     logo: "https://avatar.iran.liara.run/public/boy",
     text:
       "Adroits Digital has done an outstanding job with the UI, providing timely assistance and delivering the project right on schedule.",
-    authorImg: lawblovks,
+    authorImg: infograph,
     author: "Dhriti Misra",
     role: "Project & Investment Manager, lawblocks.io",
   },
@@ -73,30 +74,34 @@ export default function TestimonialSection() {
         >
           {testimonials.map((item, index) => (
             <SwiperSlide key={index}>
-              <div className=" rounded-xl flex flex-col justify-around shadow-sm my-10 p-4 h-[356px] bg-[#151517] testimonial-card">
+              <div className=" rounded-xl relative flex flex-col justify-between shadow-sm my-10 h-80 p-4  bg-[#151517] testimonial-card">
                 {/* Text */}
+
+                <div>
+                  <div className="icons_quote">
+                    <FaQuoteLeft />
+                  </div>
+                  <p className="text-white text-[18px] mb-4 mt-3">
+                    {item.text}
+                  </p>
+                </div>
+
+                {/* Author */}
                 <div className="flex items-center  pt-4">
-                  <div className="h-14 flex items-center">
+                  <div className="h-auto flex  items-center gap-3">
                     <img
                       src={item.authorImg}
                       alt={item.author}
                       className=" test-image "
                     />
-                  </div>
-
-                  <div>
-                    <div className="logo_test_cicle"></div>
-                  </div>
-                </div>
-
-                <p className="text-white text-[18px] mb-4 mt-3">{item.text}</p>
-                <div className="flex items-center  pt-4">
-                  <div>
-                    <h4 className="text-white font-semibold">{item.author}</h4>
-                    <p className="text-sm text-gray-500 role">{item.role}</p>
+                    <div>
+                      <h4 className="text-white font-semibold">
+                        {item.author}
+                      </h4>
+                      <p className="text-sm text-gray-500 role">{item.role}</p>
+                    </div>
                   </div>
                 </div>
-                {/* Author */}
               </div>
             </SwiperSlide>
           ))}
