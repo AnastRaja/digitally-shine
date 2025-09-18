@@ -3,40 +3,42 @@ import {Swiper, SwiperSlide} from "swiper/react";
 import {Navigation} from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
-
+import kmedit from "../assets/testi/KM-EDIT.png";
+import infograph from "../assets/testi/ifography.png";
+import lawblovks from "../assets/testi/lawblovks.png";
 const testimonials = [
   {
     logo: "https://avatar.iran.liara.run/public/boy",
     text:
-      "Adroits Digital didn’t just help us market our NFT project—they helped us build a global community. The results were beyond expectations",
-    authorImg: "https://avatar.iran.liara.run/public/boy",
-    author: "Maya Chen",
-    role: "Co-Founder, PixelPandas NFT",
+      "Adroits Digital helped Infography.in boost visibility and drive higher profits with their smart marketing strategies. They are a team you can truly rely on for growth.",
+    authorImg: infograph,
+    author: "Manoj",
+    role: "CEO of Infography.in",
   },
   {
     logo: "https://avatar.iran.liara.run/public/boy",
     text:
-      "Their AI-driven campaigns increased our conversions by 200%. It felt like they knew our customers better than we did.",
-    authorImg: "https://avatar.iran.liara.run/public/boy",
-    author: "Ankit Malhotra",
-    role: "Head of Growth, UrbanLoom Fashion",
+      "We’ve partnered with Adroits Digital on several projects, and their expertise in social media posters and handling has always stood out. Their creative approach consistently takes our projects to the next level.",
+    authorImg: kmedit,
+    author: "Senthil",
+    role: "KM Edit",
   },
   {
     logo: "https://avatar.iran.liara.run/public/boy",
     text:
-      "From web design to strategy, they delivered quality and innovation at every step",
-    authorImg: "https://avatar.iran.liara.run/public/boy",
-    author: "Priya Deshmukh ",
-    role: "Startup CEO",
+      "Adroits Digital has done an outstanding job with the UI, providing timely assistance and delivering the project right on schedule.",
+    authorImg: lawblovks,
+    author: "Dhriti Misra",
+    role: "Project & Investment Manager, lawblocks.io",
   },
-  {
-    logo: "https://avatar.iran.liara.run/public/boy",
-    text:
-      "We’re a SaaS bootstrapped to $1 M ARR and needed predictable pipeline. Their LinkedIn ABM cadences booked 43 qualified demos per month—up from 9—and cut sales cycle by 22 days.",
-    authorImg: "https://avatar.iran.liara.run/public/boy",
-    author: "Rahul Nair",
-    role: "Founder & CTO",
-  },
+  // {
+  //   logo: "https://avatar.iran.liara.run/public/boy",
+  //   text:
+  //     "We’re a SaaS bootstrapped to $1 M ARR and needed predictable pipeline. Their LinkedIn ABM cadences booked 43 qualified demos per month—up from 9—and cut sales cycle by 22 days.",
+  //   authorImg: "https://avatar.iran.liara.run/public/boy",
+  //   author: "Rahul Nair",
+  //   role: "Founder & CTO",
+  // },
   // ➝ Add more testimonials here
 ];
 
@@ -71,22 +73,29 @@ export default function TestimonialSection() {
         >
           {testimonials.map((item, index) => (
             <SwiperSlide key={index}>
-              <div className=" rounded-xl flex flex-col justify-start shadow-sm my-10 p-4 h-64 max-h-64 bg-[#151517] testimonial-card">
+              <div className=" rounded-xl flex flex-col justify-around shadow-sm my-10 p-4 h-[356px] bg-[#151517] testimonial-card">
                 {/* Text */}
                 <div className="flex items-center  pt-4">
-                  <img
-                    src={item.authorImg}
-                    alt={item.author}
-                    className="w-12 h-12 rounded-md object-cover mr-4"
-                  />
+                  <div className="h-14 flex items-center">
+                    <img
+                      src={item.authorImg}
+                      alt={item.author}
+                      className=" test-image "
+                    />
+                  </div>
+
+                  <div>
+                    <div className="logo_test_cicle"></div>
+                  </div>
+                </div>
+
+                <p className="text-white text-[18px] mb-4 mt-3">{item.text}</p>
+                <div className="flex items-center  pt-4">
                   <div>
                     <h4 className="text-white font-semibold">{item.author}</h4>
                     <p className="text-sm text-gray-500 role">{item.role}</p>
                   </div>
                 </div>
-
-                <p className="text-white text-[18px] mb-4 mt-3">{item.text}</p>
-
                 {/* Author */}
               </div>
             </SwiperSlide>

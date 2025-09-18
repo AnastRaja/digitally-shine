@@ -1,6 +1,7 @@
 // HeroSlider.jsx
 import React, {useEffect, useState} from "react";
 import {Volume2, VolumeX} from "lucide-react";
+import PartnersMarquee from "./PartnersMarquee";
 import {
   ArrowRight,
   CheckCircle,
@@ -54,6 +55,7 @@ export default function HeroSlider() {
                   Book a Free Discovery Call <ChevronRight />{" "}
                 </button>
               </Link>
+              {/* <PartnersMarquee /> */}
             </div>
           </div>
         </div>

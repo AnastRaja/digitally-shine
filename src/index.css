@@ -708,6 +708,12 @@ a:hover {
   margin-bottom: 19px;
   letter-spacing: 0.7px;
 }
+.test-image {
+  filter: invert(99%) sepia(96%) saturate(17%) hue-rotate(251deg)
+    brightness(104%) contrast(100%);
+  width: 150px;
+  margin-bottom: 15px;
+}
 .contact_bg {
   background-image: url("./assets/bg_contecnt.jpg");
   background-size: cover;
