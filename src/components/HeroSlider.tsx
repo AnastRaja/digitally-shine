@@ -1,6 +1,6 @@
 // HeroSlider.jsx
-import React, {useEffect, useState} from "react";
-import {Volume2, VolumeX} from "lucide-react";
+import React, { useEffect, useState } from "react";
+import { Volume2, VolumeX } from "lucide-react";
 import PartnersMarquee from "./PartnersMarquee";
 import {
   ArrowRight,
@@ -14,13 +14,13 @@ import {
 import web3 from "../assets/web3marketing.jpg";
 import digital from "../assets/digital.jpg";
 import ai from "../assets/ai.jpg";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function HeroSlider() {
   const [current, setCurrent] = useState(0);
   const [muted, setMuted] = useState(true);
 
-  const totalSlides = 3; // Update this when you add more slides
+  const totalSlides = 1; // Update this when you add more slides
 
   useEffect(() => {
     const id = setInterval(() => {
@@ -33,22 +33,19 @@ export default function HeroSlider() {
     <div className="relative w-full min-h-screen md:h-[85vh] overflow-hidden heroSlider">
       {/* Slide 1 */}
       <div
-        className={`absolute inset-0 transition-opacity duration-1000 ${
-          current === 0 ? "opacity-100 z-20" : "opacity-0 z-10"
-        }`}
+        className={`absolute inset-0 transition-opacity duration-1000 ${current === 0 ? "opacity-100 z-20" : "opacity-0 z-10"
+          }`}
       >
         <img src={web3} alt="Slide 1" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-black/40 flex flex-col justify-end items-start px-6 md:px-20 pb-32 left-0 inner_content_hero">
           <div className="container ">
             <div className="flex flex-col gap-6 max-w-3xl sm:w-full">
               <h1 className="text-white text-3xl md:text-7xl font-bold heading-hero">
-                Web3 Marketing <br />
-                Services
+                Digital Transformation <br />company
               </h1>
               <p className="text-lg max-w-xl sm:w-full ">
-                From <strong>NFTs to Metaverse and Blockchain growth</strong>,{" "}
-                we build decentralized strategies that connect communities and
-                create influence.
+                We transform ideas and legacy systems into powerful digital experiences. Our team designs, builds, and scales modern solutions that help businesses move faster, work smarter, and grow sustainably.
+
               </p>
               <Link to="/contact">
                 <button className="mt-4 px-3 py-3 h-[52px] flex justify-between rounded-lg gap-2 items-center transition hero-button">
@@ -62,7 +59,7 @@ export default function HeroSlider() {
       </div>
 
       {/* Slide 2 */}
-      <div
+      {/* <div
         className={`absolute inset-0 transition-opacity duration-1000 ${
           current === 1 ? "opacity-100 z-20" : "opacity-0 z-10"
         }`}
@@ -92,10 +89,10 @@ export default function HeroSlider() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Slide 3 */}
-      <div
+      {/* <div
         className={`absolute inset-0 transition-opacity duration-1000 ${
           current === 2 ? "opacity-100 z-20" : "opacity-0 z-10"
         }`}
@@ -122,13 +119,13 @@ export default function HeroSlider() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* --- Indicators & mute button --- */}
       <div className="absolute bottom-6 right-36 z-50 bottom_select">
         <div className="flex items-center gap-3 bg-black/40 px-3 py-2 rounded-full backdrop-blur-sm">
           {/* Indicators */}
-          <div className="flex gap-3 items-center">
+          {/* <div className="flex gap-3 items-center">
             <button
               onClick={() => setCurrent(0)}
               className={`transition-all rounded-full ${
@@ -147,7 +144,7 @@ export default function HeroSlider() {
                 current === 2 ? "w-10 h-2 bg-white" : "w-8 h-[6px] bg-white/40"
               }`}
             />
-          </div>
+          </div> */}
 
           {/* Mute/unmute */}
           {/* <button

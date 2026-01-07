@@ -17,7 +17,8 @@ All colors MUST be HSL.
     --foreground-dark: 0 0% 98%;
 
     /* Brand colors - inspired by reference */
-    --primary: #a100ff; /* Professional green */
+    --primary: #a100ff;
+    /* Professional green */
     --primary-gradient: #a100ff;
     --primary-foreground: 0 0% 98%;
     --primary-dark: 142 84% 28%;
@@ -55,21 +56,15 @@ All colors MUST be HSL.
     --destructive-foreground: 0 0% 98%;
 
     /* Gradients */
-    --gradient-primary: linear-gradient(
-      135deg,
-      hsl(142 76% 36%),
-      hsl(142 84% 28%)
-    );
-    --gradient-hero: linear-gradient(
-      135deg,
-      hsl(0 0% 3.9%) 0%,
-      hsl(142 76% 8%) 100%
-    );
-    --gradient-section: linear-gradient(
-      180deg,
-      hsl(0 0% 3.9%) 0%,
-      hsl(0 0% 8.5%) 100%
-    );
+    --gradient-primary: linear-gradient(135deg,
+        hsl(142 76% 36%),
+        hsl(142 84% 28%));
+    --gradient-hero: linear-gradient(135deg,
+        hsl(0 0% 3.9%) 0%,
+        hsl(142 76% 8%) 100%);
+    --gradient-section: linear-gradient(180deg,
+        hsl(0 0% 3.9%) 0%,
+        hsl(0 0% 8.5%) 100%);
 
     /* Shadows */
     --shadow-sm: 0 1px 2px 0 hsl(0 0% 0% / 0.05);
@@ -142,12 +137,15 @@ All colors MUST be HSL.
     color: hsl(var(--foreground-dark));
     font-family: "DM Sans", sans-serif;
     font-optical-sizing: auto;
-    -webkit-font-smoothing: antialiased; /* smoother text on macOS/iOS */
-    -moz-osx-font-smoothing: grayscale; /* smoother text on Firefox/macOS */
+    -webkit-font-smoothing: antialiased;
+    /* smoother text on macOS/iOS */
+    -moz-osx-font-smoothing: grayscale;
+    /* smoother text on Firefox/macOS */
   }
 }
 
 @layer components {
+
   /* Reusable component classes */
   .btn-primary {
     @apply bg-primary hover:bg-primary-dark text-primary-foreground px-6 py-3 rounded-lg font-medium transition-all duration-300 ease-smooth shadow-md hover:shadow-lg;
@@ -167,11 +165,9 @@ All colors MUST be HSL.
 
   /* Hero section with background image */
   .hero-gradient {
-    background: linear-gradient(
-        135deg,
+    background: linear-gradient(135deg,
         hsl(0 0% 3.9% / 0.8) 0%,
-        hsl(142 76% 8% / 0.9) 100%
-      ),
+        hsl(142 76% 8% / 0.9) 100%),
       url("/src/assets/hero-bg.jpg") center/cover no-repeat;
     background-attachment: fixed;
   }
@@ -197,6 +193,7 @@ All colors MUST be HSL.
   font-weight: 500 !important;
   line-height: 1.14 !important;
 }
+
 .hero-button {
   color: #fff;
   background-color: #0000;
@@ -224,6 +221,7 @@ All colors MUST be HSL.
   line-height: 1.25rem;
   font-weight: 300;
 }
+
 .content-about h2 {
   font-size: 2.625rem;
   /* line-height: 1; */
@@ -231,6 +229,7 @@ All colors MUST be HSL.
   line-height: 1.2;
   margin-bottom: 21px;
 }
+
 .content-about p {
   font-size: 1rem;
   font-weight: 300;
@@ -239,6 +238,7 @@ All colors MUST be HSL.
   margin-bottom: 19px;
   letter-spacing: 0.7px;
 }
+
 .content-about button {
   background: #a100ff;
   padding: 10px 15px;
@@ -246,6 +246,7 @@ All colors MUST be HSL.
   border-radius: 10px;
   font-size: 1rem;
 }
+
 .header-button {
   background: #a100ff;
   padding: 8px 19px;
@@ -253,6 +254,7 @@ All colors MUST be HSL.
   border-radius: 8px;
   font-size: 14px;
 }
+
 /* .content-about {
   margin-bottom: 50px;
 } */
@@ -262,15 +264,18 @@ All colors MUST be HSL.
   flex-direction: column-reverse;
   justify-content: start;
 }
+
 .card-about img {
   width: 60px;
   margin-bottom: 10px;
 }
+
 .card-about h3 {
   font-size: 1.5rem !important;
   margin-bottom: 10px !important;
   font-weight: 400;
 }
+
 .card-about p {
   font-size: 1rem;
   font-weight: 300;
@@ -289,6 +294,7 @@ All colors MUST be HSL.
   border-radius: 10px;
   transition: all 0.3s ease-in-out;
 }
+
 /* .bg-image:hover {
   box-shadow: rgb(240 46 170 / 17%) -5px 5px, rgb(240 46 170 / 13%) -10px 10px;
 } */
@@ -332,6 +338,7 @@ All colors MUST be HSL.
   width: 72px;
   margin-bottom: 20px;
 }
+
 .content-service {
   cursor: pointer;
   height: 100%;
@@ -342,12 +349,14 @@ All colors MUST be HSL.
   justify-content: flex-start;
   align-items: flex-start;
 }
+
 .content-service h3 {
   font-size: 25px;
   margin-bottom: 8px;
   line-height: 31px;
   font-weight: 500;
 }
+
 .content-service p {
   font-size: 1rem;
   font-weight: 300;
@@ -356,14 +365,17 @@ All colors MUST be HSL.
   margin-bottom: 19px;
   letter-spacing: 0.7px;
 }
+
 .content-service button {
   font-size: 14px;
   opacity: 0.7;
 }
+
 .content-service:hover button {
   font-size: 14px;
   text-decoration: underline;
 }
+
 .blog-text_ {
   font-size: 2.625rem;
   font-weight: 500;
@@ -378,6 +390,7 @@ All colors MUST be HSL.
   margin-bottom: 7px;
   opacity: 0.7;
 }
+
 .blog-list span {
   font-size: 16px;
   font-weight: 400;
@@ -385,18 +398,21 @@ All colors MUST be HSL.
   margin-bottom: 7px;
   opacity: 0.7;
 }
+
 .blog-list h3 {
   font-size: 24px;
   line-height: 30px;
   color: #fff;
   margin-bottom: 10px;
 }
+
 .blog-list p {
   font-size: 14px;
   font-weight: 500;
   color: #fff;
   opacity: 0.7;
 }
+
 .swiper-button-next,
 .swiper-rtl .swiper-button-prev {
   width: 50px;
@@ -423,13 +439,16 @@ All colors MUST be HSL.
 .swiper-rtl .swiper-button-prev:after {
   font-size: 22px;
 }
+
 .swiper-button-prev:after,
 .swiper-rtl .swiper-button-next:after {
   font-size: 22px;
 }
+
 .swiper {
   overflow: visible;
 }
+
 .blog_lable {
   background: #2a2a2a;
   padding: 8px 17px;
@@ -440,18 +459,21 @@ All colors MUST be HSL.
   /* margin-bottom: 20px; */
   color: #fff;
 }
+
 .content-area p {
   margin: 14px 0px;
   font-size: 18px;
   line-height: 30px !important;
   font-weight: 300;
 }
+
 .content-area h2 {
   font-size: 27px;
   line-height: 38px;
   text-transform: capitalize;
   font-weight: 600;
 }
+
 .CTA_section {
   background-size: 100%;
   background-repeat: no-repeat;
@@ -461,16 +483,19 @@ All colors MUST be HSL.
 
   background-image: url("./assets/CTA_banner.png");
 }
+
 .CTA_section h2 {
   font-size: 2.625rem;
   font-weight: 500;
   line-height: 1.2;
   margin-bottom: 11px;
 }
+
 .blog_button_cat {
   background: transparent !important;
   border: 1px solid !important;
 }
+
 .blog_button_cat.active {
   background: #a100ff !important;
   border: 1px solid #a100ff !important;
@@ -480,21 +505,25 @@ All colors MUST be HSL.
   list-style: disc;
   padding-left: 16px;
 }
-.header_mega_menu {
-}
+
+.header_mega_menu {}
+
 .header_mega_menu h3 {
   font-size: 32px;
   margin-bottom: 8px;
   font-weight: 600;
 }
+
 .image_sidebar {
   height: 100%;
   object-fit: cover;
 }
+
 .why_image {
   height: 400px;
   width: 100%;
 }
+
 .header_nave_link {
   display: flex;
   font-size: 18px;
@@ -503,15 +532,18 @@ All colors MUST be HSL.
   padding: 13px 0px;
   border-bottom: 1px solid #cccccc33;
 }
+
 .header_nave_link:hover {
   color: #b647f6f5 !important;
 }
+
 .ourblog_section {
   height: 100%;
   display: flex;
   justify-content: end;
   align-items: end;
 }
+
 .blog_lable_span {
   width: fit-content;
   background: #2a2a2a;
@@ -522,14 +554,17 @@ All colors MUST be HSL.
   font-weight: 500;
   color: #fff;
 }
+
 .bg_new {
   background-image: url("./assets/bg_service.jpg");
   background-size: cover;
   background-position: center;
 }
+
 .border-1solid {
   border: 1px solid #fff !important;
 }
+
 .blog_button {
   display: flex;
   justify-content: space-between;
@@ -540,14 +575,17 @@ All colors MUST be HSL.
   border: none !important;
   transition: all 0.3s ease-in-out !important;
 }
+
 .blog_button:hover {
   cursor: pointer;
   transform: scale(1.03);
   background: #a100ff !important;
 }
-ul > li > p > br {
+
+ul>li>p>br {
   display: none;
 }
+
 a:hover {
   color: inherit !important;
 }
@@ -556,20 +594,25 @@ a:hover {
   font-size: 1.25rem !important;
   font-weight: 400;
 }
+
 .testimonial-card p {
   font-size: 1rem !important;
   font-weight: 400;
 }
+
 .testimonial-card .role {
   font-size: 0.875rem !important;
 }
+
 .linehight-blog {
   line-height: 1.5rem !important;
 }
+
 .blog_card_section,
 .testimonial-card {
   transition: all 0.3s ease-in-out;
 }
+
 .blog_card_section:hover,
 .testimonial-card:hover {
   cursor: pointer;
@@ -577,6 +620,7 @@ a:hover {
   box-shadow: 0 4px 6px -1px hsl(0 0% 0% / 0.1),
     0 10px 15px -3px hsl(0 0% 0% / 0.1);
 }
+
 .solution_section {
   background-image: url("./assets/bg_servicenew.jpg");
   background-size: cover;
@@ -584,6 +628,7 @@ a:hover {
   background-attachment: fixed;
   background-repeat: no-repeat;
 }
+
 .content-service {
   /* From https://css.glass */
   /* From https://css.glass */
@@ -598,6 +643,7 @@ a:hover {
   border-radius: 10px;
   padding: 20px;
 }
+
 .before_class::before {
   content: "";
   position: absolute;
@@ -605,12 +651,11 @@ a:hover {
   left: 0;
   width: 100%;
   height: 200px;
-  background: linear-gradient(
-    180deg,
-    rgba(21, 21, 23, 1) 33%,
-    rgba(255, 255, 255, 0) 100%
-  );
+  background: linear-gradient(180deg,
+      rgba(21, 21, 23, 1) 33%,
+      rgba(255, 255, 255, 0) 100%);
 }
+
 .before_class2::before {
   content: "";
   position: absolute;
@@ -618,12 +663,11 @@ a:hover {
   left: 0;
   width: 100%;
   height: 200px;
-  background: linear-gradient(
-    180deg,
-    rgb(0 0 0) 33%,
-    rgba(255, 255, 255, 0) 100%
-  );
+  background: linear-gradient(180deg,
+      rgb(0 0 0) 33%,
+      rgba(255, 255, 255, 0) 100%);
 }
+
 .before_class3::before {
   content: "";
   position: absolute;
@@ -631,12 +675,23 @@ a:hover {
   left: 0;
   width: 100%;
   height: 200px;
-  background: linear-gradient(
-    0deg,
-    rgba(21, 21, 23, 1) 33%,
-    rgba(255, 255, 255, 0) 100%
-  );
+  background: linear-gradient(0deg,
+      rgba(21, 21, 23, 1) 33%,
+      rgba(255, 255, 255, 0) 100%);
 }
+
+.before_class4::before {
+  content: "";
+  position: absolute;
+  top: -130px;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(0deg,
+      rgb(0, 0, 0) 33%,
+      rgba(0, 0, 0, 0) 100%);
+}
+
 .heaedr_link {
   width: 45px;
   height: 44px;
@@ -645,6 +700,7 @@ a:hover {
   place-content: center;
   border-radius: 40px;
 }
+
 .pulse {
   animation: pulse-animation 2s infinite;
 }
@@ -653,15 +709,18 @@ a:hover {
   0% {
     box-shadow: 0 0 0 0px rgba(98, 0, 115, 0.585);
   }
+
   100% {
     box-shadow: 0 0 0 20px rgba(182, 1, 254, 0);
   }
 }
+
 .mobile_contanct_footer {
   justify-content: center;
   align-items: end;
   gap: 19px;
 }
+
 /* .content-service {
   
   background: rgba(8, 8, 8, 0.25);
@@ -675,12 +734,14 @@ a:hover {
 .content-service {
   transition: all 0.3s ease-in-out;
 }
+
 .content-service:hover {
   cursor: pointer;
   transform: scale(1.02);
   box-shadow: 0 4px 6px -1px hsl(0 0% 0% / 0.1),
     0 10px 15px -3px hsl(0 0% 0% / 0.1);
 }
+
 .contact_text_badge {
   background: #2a2a2a;
   padding: 6px 14px;
@@ -693,6 +754,7 @@ a:hover {
   line-height: 1.25rem;
   font-weight: 300;
 }
+
 .contact-about h1 {
   font-size: 2.625rem;
   /* line-height: 1; */
@@ -700,6 +762,7 @@ a:hover {
   line-height: 1.2;
   margin-bottom: 21px;
 }
+
 .contact-about p {
   font-size: 1rem;
   font-weight: 300;
@@ -708,33 +771,39 @@ a:hover {
   margin-bottom: 19px;
   letter-spacing: 0.7px;
 }
+
 .test-image {
   height: 50px;
   width: 50px;
   margin-bottom: 15px;
   border-radius: 50%;
 }
+
 .icons_quote {
   font-size: 23px;
   margin-top: 10px;
   color: #a100ff87;
 }
+
 .swiper-slide {
   height: -webkit-fill-available !important;
   height: auto;
 
   display: flex !important;
 }
+
 .contact_bg {
   background-image: url("./assets/bg_contecnt.jpg");
   background-size: cover;
   background-position: center;
 }
+
 .contact_bg_new {
   background-image: url("./assets/commen-banner.jpg");
   background-size: cover;
   background-position: center;
 }
+
 .blog_banner_new {
   background-image: url("/src/assets/bg_servicenew.jpg");
   background-size: 100%;
@@ -746,6 +815,7 @@ a:hover {
   border-radius: 20px;
   height: 40vh;
 }
+
 .blog_banner_new h1 {
   font-size: 2.625rem;
   /* line-height: 1; */
@@ -753,6 +823,7 @@ a:hover {
   line-height: 1.2;
   margin-bottom: 21px;
 }
+
 .blog_banner_new p {
   font-size: 1rem;
   font-weight: 300;
@@ -761,20 +832,123 @@ a:hover {
   margin-bottom: 19px;
   text-align: center;
 }
+
+.sectionBg-web3 {
+  background-image: url("./assets/service/web3marketing.jpeg");
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+}
+
+.softshadow {
+  box-shadow: rgba(207, 231, 255, 0.2) 0px 2px 1px 0px inset;
+}
+
+.bg-img-web3 {
+  background-image: url("./assets/service/bg-web3.png");
+  background-size: 100% 100%;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+/* Wrapper */
+.marquee-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 20px 0;
+}
+
+/* Gradient masks */
+.marquee-wrapper::before,
+.marquee-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 120px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+
+
+/* Marquee base */
+.marquee {
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Track */
+.marquee-track {
+  display: flex;
+  gap: 16px;
+  width: max-content;
+  animation: marquee-left 30s linear infinite;
+}
+
+/* Direction control */
+.marquee-left .marquee-track {
+  animation-name: marquee-left;
+}
+
+.marquee-right .marquee-track {
+  animation-name: marquee-right;
+}
+
+/* Pills */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 20px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+  font-size: 14px;
+  white-space: nowrap;
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Animations */
+@keyframes marquee-left {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-right {
+  from {
+    transform: translateX(-50%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
 /* Extra small devices (phones, portrait) */
 @media only screen and (max-width: 480px) {
+
   .swiper-button-next,
   .swiper-button-prev {
     position: absolute;
     bottom: -40px !important;
     top: inherit;
   }
+
   .padding_mobile {
     padding: 0px 10px !important;
   }
+
   .form_contact {
     gap: 0px !important;
   }
+
   .blog_banner_new {
     background-size: cover;
     height: auto;
@@ -784,34 +958,42 @@ a:hover {
     z-index: 10;
     background: transparent !important;
   }
+
   .blog_banner_new h1 {
     font-size: 1.625rem;
 
     margin-bottom: 10px;
   }
+
   /* Move prev to the left side of center */
   .swiper-button-prev {
     left: 50%;
-    transform: translateX(-120%); /* adjust spacing */
+    transform: translateX(-120%);
+    /* adjust spacing */
   }
 
   /* Move next to the right side of center */
   .swiper-button-next {
     left: 50%;
-    transform: translateX(20%); /* adjust spacing */
+    transform: translateX(20%);
+    /* adjust spacing */
   }
+
   .ourblog_section {
     justify-content: start;
   }
+
   .CTA_section {
     background-size: cover;
   }
+
   /* .heroSlider {
     min-height: 650px !important;
   } */
   .heading-hero {
     font-size: 38px !important;
   }
+
   /* .inner_content_hero {
     justify-content: center !important;
   } */
@@ -820,59 +1002,65 @@ a:hover {
     right: auto !important;
     transform: translateX(-50%);
   }
+
   .blog-text_,
   .CTA_section h2,
   .content-about h2 {
     font-size: 2rem;
   }
+
   .content-about p {
     font-size: 1.125rem;
   }
+
   .content-service h3 {
     font-size: 1.5rem;
   }
+
   .blog_span_titile {
     width: 220px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
   }
+
   .blog-padding {
     padding-top: 5rem;
   }
+
   .blog-padding h1 {
     font-size: 2rem !important;
   }
+
   .content-area p {
     margin: 14px 0px;
     font-size: 1rem;
     line-height: 25px !important;
     font-weight: 300;
   }
+
   .content-area h2 {
     font-size: 25px;
     line-height: 33px;
   }
+
   header.bg-transparent {
     background-color: #151517 !important;
   }
+
   .paddin_o {
     padding: 0px !important;
   }
 }
 
 /* Small devices (phones, landscape) */
-@media only screen and (max-width: 576px) {
-}
+@media only screen and (max-width: 576px) {}
 
 /* Medium devices (tablets) */
-@media only screen and (max-width: 768px) {
-}
+@media only screen and (max-width: 768px) {}
 
 /* Large devices (small laptops) */
-@media only screen and (max-width: 992px) {
-}
+@media only screen and (max-width: 992px) {}
 
 /* Extra large (desktops) */
-@media only screen and (max-width: 1200px) {
-}
+@media only screen and (max-width: 1200px) {}
