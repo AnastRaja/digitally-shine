@@ -230,13 +230,25 @@ All colors MUST be HSL.
   margin-bottom: 21px;
 }
 
-.content-about p {
+.content-about p,
+.content-about ul li {
   font-size: 1rem;
   font-weight: 300;
   opacity: 0.7;
   line-height: 26px;
   margin-bottom: 19px;
   letter-spacing: 0.7px;
+}
+
+.content-about ul {
+  list-style: disc;
+  padding-left: 17px;
+  margin-bottom: 19px;
+
+}
+
+.content-about ul li {
+  margin-bottom: 6px !important;
 }
 
 .content-about button {
@@ -834,7 +846,7 @@ a:hover {
 }
 
 .sectionBg-web3 {
-  background-image: url("./assets/service/web3marketing.jpeg");
+  background-image: url("./assets/service/web3marketing.webp");
   background-position: center;
   background-size: cover;
   height: 100vh;
@@ -845,7 +857,7 @@ a:hover {
 }
 
 .bg-img-web3 {
-  background-image: url("./assets/service/bg-web3.png");
+  background-image: url("./assets/service/bg-web3.webp");
   background-size: 100% 100%;
   background-attachment: fixed;
   background-repeat: no-repeat;

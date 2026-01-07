@@ -1,10 +1,10 @@
-import {useState, useEffect} from "react";
-import {Link, useLocation} from "react-router-dom";
-import {Menu, X, ChevronRight} from "lucide-react";
-import {Button} from "./ui/button";
+import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { Menu, X, ChevronRight } from "lucide-react";
+import { Button } from "./ui/button";
 import Logo from "../assets/logo.png";
-import {FaWhatsapp} from "react-icons/fa";
-import {Mail} from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
+import { Mail } from "lucide-react";
 
 import {
   Accordion,
@@ -20,9 +20,9 @@ const Header = () => {
   const location = useLocation();
 
   const navigation = [
-    {name: "Services", href: "#services", megaMenu: true},
-    {name: "Blog", href: "/blog"},
-    {name: "Contact", href: "/contact"},
+    { name: "Services", href: "#services", megaMenu: true },
+    { name: "Blog", href: "/blog" },
+    { name: "Contact", href: "/contact" },
   ];
 
   const isActive = (href: string) => {
@@ -38,11 +38,10 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 w-full z-50 transition-colors duration-500 ${
-        scrolled
+      className={`fixed top-0 w-full z-50 transition-colors duration-500 ${scrolled
           ? "bg-[#151517] border-b-0 border-primary/20"
           : "bg-transparent border-b-0 bg-[#151517]"
-      } ${servicesOpen ? "!bg-[#151517]" : ""}`}
+        } ${servicesOpen ? "!bg-[#151517]" : ""}`}
     >
       <nav className="container relative">
         <div className="flex items-center justify-between h-16 lg:h-20">
@@ -59,9 +58,8 @@ const Header = () => {
                   <button
                     onClick={() => setServicesOpen(!servicesOpen)}
                     aria-expanded={servicesOpen}
-                    className={`font-medium transition-all duration-300 ease-smooth hover:text-primary ${
-                      isActive(item.href) ? "text-primary" : "text-foreground"
-                    }`}
+                    className={`font-medium transition-all duration-300 ease-smooth hover:text-primary ${isActive(item.href) ? "text-primary" : "text-foreground"
+                      }`}
                   >
                     {item.name}
                   </button>
@@ -70,9 +68,8 @@ const Header = () => {
                 <Link
                   key={item.name}
                   to={item.href}
-                  className={`font-medium transition-all duration-300 ease-smooth hover:text-primary ${
-                    isActive(item.href) ? "" : "text-foreground"
-                  }`}
+                  className={`font-medium transition-all duration-300 ease-smooth hover:text-primary ${isActive(item.href) ? "" : "text-foreground"
+                    }`}
                 >
                   {item.name}
                 </Link>
@@ -131,11 +128,11 @@ const Header = () => {
                         <ul className="flex flex-col space-y-3 pl-4 text-sm text-foreground mt-2">
                           <li>
                             <Link
-                              to="/services/suitecommerce"
+                              to="/web3-marketing-agency"
                               onClick={() => setIsMenuOpen(false)}
                               className="hover:text-primary flex items-center justify-between"
                             >
-                              WEB3 Marketing{" "}
+                              Web3 Marketing{" "}
                               <ChevronRight className="w-4 h-4" />
                             </Link>
                           </li>
@@ -236,9 +233,8 @@ const Header = () => {
                   <Link
                     key={item.name}
                     to={item.href}
-                    className={`font-medium py-2 transition-all duration-300 ease-smooth hover:text-primary ${
-                      isActive(item.href) ? "text-primary" : "text-foreground"
-                    }`}
+                    className={`font-medium py-2 transition-all duration-300 ease-smooth hover:text-primary ${isActive(item.href) ? "text-primary" : "text-foreground"
+                      }`}
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {item.name}
@@ -272,20 +268,18 @@ const Header = () => {
         {/* Backdrop */}
         <div
           onClick={() => setServicesOpen(false)}
-          className={`fixed left-0 right-0 top-16 lg:top-20 bottom-0 z-30 transition-opacity duration-300 ${
-            servicesOpen
+          className={`fixed left-0 right-0 top-16 lg:top-20 bottom-0 z-30 transition-opacity duration-300 ${servicesOpen
               ? "opacity-100 pointer-events-auto"
               : "opacity-0 pointer-events-none"
-          } bg-black/10`}
+            } bg-black/10`}
         />
 
         {/* Mega menu */}
         <div
-          className={`fixed left-0 right-0 top-16 lg:top-20 z-40 transition-all duration-300 transform-gpu ${
-            servicesOpen
+          className={`fixed left-0 right-0 top-16 lg:top-20 z-40 transition-all duration-300 transform-gpu ${servicesOpen
               ? "opacity-100 visible translate-y-0 pointer-events-auto"
               : "opacity-0 invisible -translate-y-4 pointer-events-none"
-          }`}
+            }`}
         >
           <div className="w-screen mx-auto header_mega_menu !bg-[#151517]">
             <div className="container">
@@ -304,11 +298,11 @@ const Header = () => {
                   <ul className="space-y-2 text-sm text-gray-600">
                     <li>
                       <Link
-                        to="/services/suitecommerce"
+                        to="/web3-marketing-agency"
                         className="hover:text-primary block header_nave_link"
                         onClick={() => setServicesOpen(false)}
                       >
-                        WEB3 Marketing <ChevronRight />
+                        Web3 Marketing <ChevronRight />
                       </Link>
                     </li>
                     <li>
