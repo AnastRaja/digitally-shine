@@ -110,7 +110,7 @@ const VerticalStickyProcess = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
 
                     {/* LEFT – Sticky Title */}
-                    <div className="lg:col-span-5">
+                    <div className="lg:col-span-6">
                         <div className="sticky top-28 content-about">
                             <h2 className="text-4xl md:text-6xl font-bold text-white leading-tight">
                                 Our Web3 <br />Marketing Process
@@ -125,13 +125,13 @@ const VerticalStickyProcess = () => {
                     </div>
 
                     {/* RIGHT – Scrolling Cards */}
-                    <div className="lg:col-span-7 flex flex-col gap-8">
+                    <div className="lg:col-span-6 flex flex-col gap-4">
                         {cards.map((card) => (
                             <div
                                 key={card.id}
-                                className="group relative h-[300px] w-full overflow-hidden rounded-2xl softshadow bg-white/5 p-8 backdrop-blur-sm flex flex-col justify-between items-start"
+                                className="group relative  w-full overflow-hidden rounded-2xl softshadow bg-white/5 p-8 backdrop-blur-sm flex flex-col justify-between items-start"
                             >
-                                <div className="mb-6">{card.icon}</div>
+                                <div className="mb-4">{card.icon}</div>
                                 <div>
                                     <h3 className="mb-2 text-2xl font-bold text-white group-hover:text-[#a100ff]">
                                         {card.title}

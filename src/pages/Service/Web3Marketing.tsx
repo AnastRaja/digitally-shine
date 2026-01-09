@@ -33,11 +33,12 @@ function Web3Marketing() {
                         {/* Bottom Section: Button and Text */}
                         <div className='flex flex-col md:flex-row items-end justify-between w-full gap-8 relative z-10'>
                             {/* Bottom Left: Button */}
-                            <div>
+                            <div className='content-about'>
                                 <Link to="/contact" className='group flex items-center gap-2 text-white text-xl font-medium hover:text-primary transition-colors'>
-                                    Get a Quote
-                                    <ArrowRight className='w-6 h-6 transition-transform group-hover:translate-x-1' />
+
+                                    <button className='flex items-center gap-2'>Get a Quote <ArrowRight className='w-6 h-6 transition-transform group-hover:translate-x-1 ' /> </button>
                                 </Link>
+
                             </div>
 
                             {/* Bottom Right: Description */}
@@ -168,7 +169,7 @@ function Web3Marketing() {
                             <div className=' pb-4'>
                                 <div className="content-about pt-4">
                                     <h2 className="text-4xl text-center md:text-6xl font-bold text-white leading-tight">
-                                        Our Expertise <br />Web3 Marketing Service Areas
+                                        Top Crypto <br />Social Media Platforms We Work on
                                     </h2>
                                     <p>
 
