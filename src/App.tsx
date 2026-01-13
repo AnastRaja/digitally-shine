@@ -11,6 +11,7 @@ import BlogList from "./pages/BlogList";
 import BlogDetail from "./pages/BlogDetail";
 import NotFound from "./pages/NotFound";
 import Web3Marketing from "./pages/Service/Web3Marketing";
+import Web3Development from "./pages/Service/Web3Development";
 
 const queryClient = new QueryClient();
 
@@ -28,6 +29,7 @@ const App = () => (
             <Route path="/blog" element={<BlogList />} />
             <Route path="/blogdetails/:slug" element={<BlogDetail />} />
             <Route path="/web3-marketing-agency" element={<Web3Marketing />} />
+            <Route path="/web3-development-agency" element={<Web3Development />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

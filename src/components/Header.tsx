@@ -39,8 +39,8 @@ const Header = () => {
   return (
     <header
       className={`fixed top-0 w-full z-50 transition-colors duration-500 ${scrolled
-          ? "bg-[#151517] border-b-0 border-primary/20"
-          : "bg-transparent border-b-0 bg-[#151517]"
+        ? "bg-[#151517] border-b-0 border-primary/20"
+        : "bg-transparent border-b-0 bg-[#151517]"
         } ${servicesOpen ? "!bg-[#151517]" : ""}`}
     >
       <nav className="container relative">
@@ -157,7 +157,7 @@ const Header = () => {
                           </li>
                           <li>
                             <Link
-                              to="/services/suitecommerce-advanced"
+                              to="/web3-development-agency"
                               onClick={() => setIsMenuOpen(false)}
                               className="hover:text-primary flex items-center justify-between"
                             >
@@ -269,16 +269,16 @@ const Header = () => {
         <div
           onClick={() => setServicesOpen(false)}
           className={`fixed left-0 right-0 top-16 lg:top-20 bottom-0 z-30 transition-opacity duration-300 ${servicesOpen
-              ? "opacity-100 pointer-events-auto"
-              : "opacity-0 pointer-events-none"
+            ? "opacity-100 pointer-events-auto"
+            : "opacity-0 pointer-events-none"
             } bg-black/10`}
         />
 
         {/* Mega menu */}
         <div
           className={`fixed left-0 right-0 top-16 lg:top-20 z-40 transition-all duration-300 transform-gpu ${servicesOpen
-              ? "opacity-100 visible translate-y-0 pointer-events-auto"
-              : "opacity-0 invisible -translate-y-4 pointer-events-none"
+            ? "opacity-100 visible translate-y-0 pointer-events-auto"
+            : "opacity-0 invisible -translate-y-4 pointer-events-none"
             }`}
         >
           <div className="w-screen mx-auto header_mega_menu !bg-[#151517]">
@@ -307,6 +307,16 @@ const Header = () => {
                     </li>
                     <li>
                       <Link
+                        to="/web3-development-agency"
+                        className="hover:text-primary block header_nave_link"
+                        onClick={() => setServicesOpen(false)}
+                      >
+                        Web3 Development
+                        <ChevronRight />
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
                         to="/services/suitecommerce-advanced"
                         className="hover:text-primary block header_nave_link"
                         onClick={() => setServicesOpen(false)}
@@ -325,16 +335,7 @@ const Header = () => {
                         <ChevronRight />
                       </Link>
                     </li>
-                    <li>
-                      <Link
-                        to="/services/suitecommerce-advanced"
-                        className="hover:text-primary block header_nave_link"
-                        onClick={() => setServicesOpen(false)}
-                      >
-                        Web3 Development
-                        <ChevronRight />
-                      </Link>
-                    </li>
+
                     <li>
                       <Link
                         to="/services/suitecommerce-advanced"

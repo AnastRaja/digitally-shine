@@ -852,6 +852,13 @@ a:hover {
   height: 100vh;
 }
 
+.sectionBg-web3-developemnt {
+  background-image: url("./assets/service/webservice.webp");
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+}
+
 .softshadow {
   box-shadow: rgba(207, 231, 255, 0.2) 0px 2px 1px 0px inset;
 }
@@ -941,6 +948,27 @@ a:hover {
   to {
     transform: translateX(0);
   }
+}
+
+.hero_image_section img {
+  width: 60%;
+  margin: 0 auto;
+  margin-top: -80px;
+  position: relative;
+  z-index: 10;
+}
+
+.hero_image_section {
+  position: relative;
+  z-index: 10;
+}
+
+
+.card_CTA {
+  background-image: url('./assets/service/webservice-CTA.webp');
+  padding: 80px;
+  background-size: cover;
+  border-radius: 30px;
 }
 
 /* Extra small devices (phones, portrait) */
@@ -1062,6 +1090,15 @@ a:hover {
 
   .paddin_o {
     padding: 0px !important;
+  }
+
+  .hero_image_section img {
+    width: 100%;
+    margin-top: -70px;
+  }
+
+  .card_CTA {
+    padding: 40px 10px;
   }
 }
 
