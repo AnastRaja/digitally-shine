@@ -22,6 +22,7 @@ const Header = () => {
   const navigation = [
     { name: "Services", href: "#services", megaMenu: true },
     { name: "Blog", href: "/blog" },
+    { name: "About Us", href: "/about-us" },
     { name: "Contact", href: "/contact" },
   ];
 
